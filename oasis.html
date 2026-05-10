@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proyecto</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="mifondo">
+    <header class="menuApp position-sticky">
+      <h1 class="position-relative-manus3">OasisSpa</h1>
+      <nav>
+        <ul>
+          <li class="position-absolute-inicio datos">
+            <a href="inicio.html">Inicio</a>
+          </li>
+          <li class="position-absolute-servicio datos">
+            <a href="servicio.html">Servicio</a>
+          </li>
+          <li class="position-absolute-contacto datos">
+            <a href="contacto.html">Contacto</a>
+          </li>
+          <li class="position-absolute-nosotros datos">
+            <a href="nosotros.html">Nosotros</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    <br> <br>
+
+    <p id="parrafo">
+      Nuestra empresa esta orientada para las personas que quieren tener un
+      momento de tranquila y salir de su zona de confort dandoles un plus de
+      relajacion y desconectarse con el mundo,Adicional ofrecemos diferentes
+      planes familiar,parejas,amigos.etc
+    </p>
+
+    
+    
+    <img
+      src="/imagines/spaversion2.png"
+      width="100px"
+      height="100px"
+      class="position-absolute-img"
+    />
+    <br>
+
+    <section class="servicios">
+
+        <div class="card">
+            <img src="imagines/aroma terapia.1.jpg" alt="">
+            <h3>Aromaterapia</h3>
+        </div>
+
+        <div class="card">
+            <img src="imagines/limpieza facial.1.jpg" alt="">
+            <h3>Limpieza Facial</h3>
+        </div>
+
+        <div class="card">
+            <img src="imagines/exfoliaciòn corporal.1.jpg" alt="">
+            <h3>Exfoliación Corporal</h3>
+        </div>
+
+        <div class="card">
+            <img src="imagines/masaje relajante.1.png" alt="">
+            <h3>Masaje Relajante</h3>
+        </div>
+
+        <div class="card">
+            <img src="imagines/hidromasaje.1.webp" alt="">
+            <h3>Hidromasaje</h3>
+        </div>
+
+        <div class="card">
+            <img src="imagines/masaje relajante.1.png" alt="">
+            <h3>Piedras Calientes</h3>
+        </div>
+
+    </section>
+
+    <!-- FORMULARIO -->
+
+    <section class="formulario">
+
+        <h2>Reserva tu experiencia</h2>
+
+      <form action="/fuera de servicio" method="get">
+        <label for="nombres" class="datos">Nombre completo:</label>
+        <input type="text" name="nombres" required /><br />
+        <label for="telefono" class="datos"> telefono </label>
+        <input type="text" name="telefono" /><br />
+        <label for="correo" class="datos">Correo:</label>
+        <input type="email" name="correo" required /> <br />
+        <label for="EdadActual" class="datos">Edad Actual:</label><br />
+        <input type="number" name="EdadActual" min="18" max="99" /><br />
+        <button type="ayuda" class="botton">Mostrar ayuda</button>
+
+            <br><br>
+
+            <label>Servicio de interés:</label>
+            <br>
+
+            <select>
+                <option>Aromaterapia</option>
+                <option>Limpieza Facial</option>
+                <option>Exfoliación Corporal</option>
+                <option>Masaje Relajante</option>
+                <option>Hidromasaje</option>
+                <option>Piedras Calientes</option>
+            </select>
+
+            <br><br>
+
+            <input type="submit" value="Enviar">
+
+      </form>
+
+    </section>
+  </body>
+</html>
