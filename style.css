@@ -128,7 +128,10 @@ margin: 10px;
   background-color:rgb(235, 208, 245);
   image-resolution: inherit;
 }
-
+/* padding =espacio que se tiene entre imganen,texto y botones*/
+/* cuando se coloca en un stylo css el (*) selector universal( aplica a todos los elementos 
+de la pagina no importa si es id,class etc.. quitar espacios automaticos entre espacios de pagina*/
+/*box-sizing: border-box el tamaño del elemento incluya el padding y el  border dentro del ancho*/
 *{
     margin: 0;
     padding: 0;
@@ -142,23 +145,10 @@ body{
     background-color: #f8f3ff;
 }
 
-/* HEADER */
-
-.header{
-    text-align: center;
-    padding: 30px;
-}
-
-/* LOGO */
-
-.logo{
-    width: 180px;
-}
-
 /* TITULO */
 
 h1{
-    color: #9b6dcb;
+    color: #9b76c3;
     font-size: 50px;
     margin-top: 10px;
 }
@@ -170,17 +160,9 @@ h1{
     margin-bottom: 50px;
 }
 
-.menu a{
-    text-decoration: none;
-    background-color: #d9c2ff;
-    color: #5c4b66;
 
-    padding: 10px 25px;
-
-    margin: 10px;
-
-    border-radius: 20px;
-}
+/* cuando el mouse pase por encima de un enlace <a> que este adentro de la clase menu 
+esto indica que cuando el maus pase por el botton cambie de color*/
 
 .menu a:hover{
     background-color: #c7a7ff;
@@ -199,7 +181,7 @@ h1{
 }
 
 /* TARJETAS */
-
+/* padding =espacio que se tiene entre imganen,texto y botones*/
 .card{
     background-color: white;
 
@@ -258,12 +240,5 @@ form select{
     margin-top: 5px;
 }
 
-/* BOTON */
 
-input[type="submit"]{
-    background-color: #d9c2ff;
-    border: none;
-
-    cursor: pointer;
-}
 
