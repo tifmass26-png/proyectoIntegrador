@@ -1,44 +1,42 @@
 /* == POSITION ==*/
 
 
-.position-relative-manus3{
-   position: relative;
-  bottom: 8px;
-  left:630px;
+.position-fixed-oasis{
+     position: fixed;
+    bottom: 650px;
+    right: 750px;
+
 }
-.position-absolute {
+
+.position-sticky-inicio{
 position: absolute;
-left: 395px;
-top: 550px;
+left:420px;
+top: 4cap;
+right:100px;
 }
-.position-absolute-inicio{
-position: absolute;
-left: 420px;
-top: 62px;
-}
-.position-absolute-servicio{
+.position-sticky-servicio{
   position: absolute;
 left:490px;
-top: 63px;
-right: 75px;
+ top: 4cap;
+right:200px;
 }
-.position-absolute-contacto{
+.position-sticky-contacto{
     position: absolute;
 left:680px;
-top: 66px;
+top: 4cap;
 right: 75px;
 }
-.position-absolute-nosotros{
+.position-sticky-nosotros{
       position: absolute;
 left:580px;
-top:65px;
+top: 4cap;
 right: 65px;
 }
 
-.position-absolute-img{
+.position-sticky-img{
     position: absolute;
-left: 1400px;
-top:34px;
+left: 120cap;
+top:20px;
 
 }
 
@@ -56,7 +54,7 @@ top:34px;
 .position-fixed{
     position: fixed;
     bottom: 5px;
-    right: -330px;
+    right: -280px;
 }
 .whatsapp-imagines{
     width: 20%;
@@ -82,12 +80,13 @@ top:34px;
   text-shadow:10px;
 }
 
-/* === DISPLAY ===*/
+/* === DISPLAY ===
 .display-inLine-block {
     display: inline-block;
     margin-left: 40px;
     margin-right: 20px;
 }
+/* === DISPLAY ===*/
 
 
 h1 {
@@ -102,6 +101,8 @@ h1 {
         font-size: 15px;
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        bottom: 15px;
+       text-align: center;
+       
       }
 
 
@@ -143,11 +144,7 @@ margin: 10px;
 /* cuando se coloca en un stylo css el (*) selector universal( aplica a todos los elementos 
 de la pagina no importa si es id,class etc.. quitar espacios automaticos entre espacios de pagina*/
 /*box-sizing: border-box el tamaño del elemento incluya el padding y el  border dentro del ancho*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* BODY */
 
@@ -168,7 +165,7 @@ h1{
 
 .menu{
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 
@@ -193,13 +190,14 @@ esto indica que cuando el maus pase por el botton cambie de color*/
 
 /* TARJETAS */
 /* padding =espacio que se tiene entre imganen,texto y botones*/
+
 .card{
     background-color: white;
-
+ 
    padding: 15px;
-
+ 
     border-radius: 20px;
-
+ 
     text-align: center;
 }
 
@@ -213,6 +211,7 @@ esto indica que cuando el maus pase por el botton cambie de color*/
 
     border-radius: 15px;
 }
+
 
 /* NOMBRES */
 
@@ -228,7 +227,7 @@ esto indica que cuando el maus pase por el botton cambie de color*/
 
     margin: 50px auto;
 
-    background-color: white;
+    background-color: rgb(249, 239, 239);
 
     padding: 25px;
 
