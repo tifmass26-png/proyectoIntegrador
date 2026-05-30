@@ -169,6 +169,7 @@ body{
     left: 0;
 
     width: 100%;
+    box-sizing: border-box;
 }
 /* TITULO */
 .menuApp h1{
@@ -313,3 +314,47 @@ body{
     font-weight: bold;
 }
 
+/* se agrega responsive para celular con tipo de letra y tamaños*/
+
+@media (max-width: 768px){
+
+    .menuApp{
+        flex-direction: column;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .menuApp h1{
+        position: static;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .menu{
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .menu a{
+        font-size: 18px;
+    }
+
+    .logo{
+        position: static;
+        width: 70px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    body{
+        padding-top: 180px;
+    }
+
+    .descripcion{
+        padding: 20px;
+    }
+
+    .formulario{
+        width: 90%;
+    }
+}
