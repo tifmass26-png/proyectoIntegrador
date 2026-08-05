@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>inicio</title>
+    <title>proyecto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="mifondo">
+    
     <header class="menuApp position-sticky">
       <h1>OasisSpa</h1>
       <nav class="menu">
@@ -15,14 +16,98 @@
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-      <img
-        src="/imagines/spaversion2.png"
-        width="100px"
-        height="100px"
-        class="logo"
-      />
+      <img src="imagines/spaversion2.png" class="logo" />
       <br />
     </header>
-    <h1>Pagina de inicio</h1>
+    <section class="descripcion">
+      <p id="parrafo">
+        Nuestra empresa esta orientada para las personas que quieren tener un
+        momento de tranquila y salir de su zona de confort dandoles un plus de
+        relajacion y desconectarse con el mundo,Adicional ofrecemos diferentes
+        planes familiar,parejas,amigos.etc
+      </p>
+    </section>
+
+    <section class="servicios">
+      <div class="card">
+        <img src="imagines/aroma terapia.1.jpg" alt="" />
+        <h3>Aromaterapia</h3>
+      </div>
+
+      <div class="card">
+        <img src="imagines/limpieza facial.1.jpg" alt="" />
+        <h3>Limpieza Facial</h3>
+      </div>
+
+      <div class="card">
+        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="" />
+        <h3>Exfoliación Corporal</h3>
+      </div>
+
+      <div class="card">
+        <img src="imagines/masaje relajante.1.png" alt="" />
+        <h3>Masaje Relajante</h3>
+      </div>
+
+      <div class="card">
+        <img src="imagines/hidromasaje.1.webp" alt="" />
+        <h3>Hidromasaje</h3>
+      </div>
+
+      <div class="card">
+        <img src="imagines/masaje relajante.1.png" alt="" />
+        <h3>Piedras Calientes</h3>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+
+    <section class="formulario">
+      <h2>Reserva tu experiencia</h2>
+
+      <form action="/fuera de servicio" method="get">
+        <label for="nombres" class="datos">Nombre completo:</label>
+        <input type="text" name="nombres" required /><br />
+        <label for="telefono" class="datos"> telefono </label>
+        <input type="text" name="telefono" /><br />
+        <label for="correo" class="datos">Correo:</label>
+        <input type="email" name="correo" required /> <br />
+        <label for="EdadActual" class="datos">Edad Actual:</label><br />
+        <input type="number" name="EdadActual" min="18" max="99" /><br />
+        <button class="boton1" type="ayuda">Mostrar ayuda</button>
+
+        <br /><br />
+
+        <label>Servicio de interés:</label>
+        <br />
+
+        <select>
+          <option>Aromaterapia</option>
+          <option>Limpieza Facial</option>
+          <option>Exfoliación Corporal</option>
+          <option>Masaje Relajante</option>
+          <option>Hidromasaje</option>
+          <option>Piedras Calientes</option>
+        </select>
+
+        <br /><br />
+
+        <input class="boton1" type="submit" value="Enviar" />
+      </form>
+    </section>
+    <section class="position-fixed">
+      <a
+        href="https://www.youtube.com/watch?v=3duWz5PZFIs&list=RDCMUCbKZVwdm_1tXd156LdSiOAg&index=4"
+        target="_blank"
+      >
+        <img
+          class="whatsapp-imagines"
+          src="imagines/imagen_whast.png"
+          alt="whast"
+        />
+      </a>
+    </section>
+    <script src="java.js"></script>
   </body>
 </html>
+

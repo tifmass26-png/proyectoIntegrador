@@ -1,5 +1,6 @@
 
 // Mensajes de prueba
+let Pagina ="Pagina oasis implementando java";
 console.log("Pagina oasis implementando java");
 console.log("Prueba pendiente de validacion");
 

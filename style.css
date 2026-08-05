@@ -1,3 +1,31 @@
+/* == encabezado==*/
+
+.bienvenida{
+    text-align:center;
+    padding:40px;
+}
+
+.bienvenida h2{
+    font-size:40px;
+    color:#7b1fa2;
+    animation: aparecer 2s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.pmensajedenostros {
+    color:#331885;
+}
+
 /* == POSITION ==*/
 
 
@@ -68,11 +96,24 @@ top:20px;
     bottom: 5px;
     right: -280px;
 }
+/*@keyframes crea una animación.
+latido es el nombre de esa animación.
+0% es el inicio.
+50% es la mitad.
+100% es el final.
+transform: scale() cambia el tamaño del elemento.
+animation: latido 1s infinite; esta animacion ayuda a reducir varias veces que les des clic*/
 .whatsapp-imagines{
     width: 20%;
     height: 30%;
     border-radius: 40%;
     border: solid 2px greenyellow;
+    animation:latido 1s infinite;
+}
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
 }
 .datos{
     box-shadow: none;
@@ -217,19 +258,26 @@ esto indica que cuando el maus pase por el botton cambie de color*/
 /* padding =espacio que se tiene entre imganen,texto y botones*/
 
 .card{
+    transition:0.4s;
     background-color: white;
     width: 320px;
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
 }
-
+.card:hover{
+    transform:translateY(-10px);
+}
 /* IMAGENES */
 
 .card img{
+    transition:0.5s;
     width: 100%;
     height: 220px;
     object-fit: cover;
+}
+.card:hover img{
+    transform:scale(1.08);
 }
 
 .card h3{
@@ -322,7 +370,9 @@ body{
         flex-direction: column;
         padding: 10px;
         box-sizing: border-box;
+         
     }
+    
 
     .menuApp h1{
         position: static;
@@ -357,4 +407,16 @@ body{
     .formulario{
         width: 90%;
     }
+}
+
+/* mesnaje de derechos reservados */
+
+footer{
+    background-color: #b7bce3;
+    color: #4b0082;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
 }
