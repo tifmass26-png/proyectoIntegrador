@@ -278,7 +278,7 @@ esto indica que cuando el maus pase por el botton cambie de color*/
 cursor: pointer;
 }
 
-.card summary:: -webkit-details-marker{
+.card summary:--webkit-details-marker{
     display: none;
 }
 
@@ -459,3 +459,157 @@ footer{
 
 /*botones de servicios*/
 
+/* PAGINA NOSOTROS */
+
+.portadaNosotros {
+    background-color: #d9c9e8;
+    text-align: center;
+    padding: 45px 20px;
+    animation: aparecer 1.5s ease;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.portadaNosotros h2 {
+    color: #7020a0;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.portadaNosotros p {
+    color: #32166b;
+}
+
+
+/* HISTORIA */
+
+.historiaNosotros {
+    background-color: #f2b7c7;
+    padding: 50px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.historiaNosotros article {
+    width: 45%;
+}
+
+.historiaNosotros h2 {
+    color: #5b168b;
+}
+
+.historiaNosotros p {
+    line-height: 1.5;
+}
+
+.historiaTiempo li {
+    margin-bottom: 20px;
+}
+
+
+/* MISION Y VISION */
+
+.misionVision {
+    background-color: #d8d9f0;
+    padding: 50px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.misionVision article {
+    background-color: white;
+    width: 40%;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px #999;
+}
+
+.misionVision h2 {
+    color: #5b168b;
+}
+
+
+/* VALORES */
+
+.valoresNosotros {
+    background-color: #f7e3ef;
+    padding: 50px;
+    text-align: center;
+}
+
+.valoresNosotros h2 {
+    color: #5b168b;
+}
+
+.valoresNosotros article {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #c8b8df;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.valoresNosotros h3 {
+    color: #32166b;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .historiaNosotros {
+        display: block;
+        padding: 30px;
+    }
+
+    .historiaNosotros article {
+        width: 100%;
+    }
+
+    .misionVision {
+        display: block;
+        padding: 30px;
+    }
+
+    .misionVision article {
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .valoresNosotros article {
+        display: block;
+        width: auto;
+        margin: 20px 0;
+    }
+
+}
+footer {
+    background-color: #b5b9df;
+    color: #4b0082;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 10px;
+}
