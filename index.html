@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="mifondo">
-    
     <header class="menuApp position-sticky">
       <h1>OasisSpa</h1>
       <nav class="menu">
@@ -62,38 +61,151 @@
 
     <!-- FORMULARIO -->
 
-    <section class="formulario">
+    <!-- ========================================================= -->
+    <!-- TARJETA PRINCIPAL (CONSERVA EL DISEÑO EXACTO DE TU FOTO)  -->
+    <!-- ========================================================= -->
+
+    <!-- 1. VISTA DE REGISTRO / RESERVA -->
+    <section id="seccion-registro" class="formulario">
       <h2>Reserva tu experiencia</h2>
 
-      <form action="/fuera de servicio" method="get">
-        <label for="nombres" class="datos">Nombre completo:</label>
-        <input type="text" name="nombres" required /><br />
-        <label for="telefono" class="datos"> telefono </label>
-        <input type="text" name="telefono" /><br />
-        <label for="correo" class="datos">Correo:</label>
-        <input type="email" name="correo" required /> <br />
-        <label for="EdadActual" class="datos">Edad Actual:</label><br />
-        <input type="number" name="EdadActual" min="18" max="99" /><br />
-        <button class="boton1" type="ayuda">Mostrar ayuda</button>
+      <form id="form-registro">
+        <label for="reg-identificacion" class="datos"
+          >Número de Identificación:</label
+        >
+        <input
+          type="text"
+          id="reg-identificacion"
+          name="identificacion"
+          required
+        />
 
         <br /><br />
 
-        <label>Servicio de interés:</label>
-        <br />
-
-        <select>
-          <option>Aromaterapia</option>
-          <option>Limpieza Facial</option>
-          <option>Exfoliación Corporal</option>
-          <option>Masaje Relajante</option>
-          <option>Hidromasaje</option>
-          <option>Piedras Calientes</option>
-        </select>
+        <label for="reg-nombre" class="datos">Nombre Completo:</label>
+        <input type="text" id="reg-nombre" name="nombre" required />
 
         <br /><br />
 
-        <input class="boton1" type="submit" value="Enviar" />
+        <label for="reg-celular" class="datos">Teléfono / Celular:</label>
+        <input type="text" id="reg-celular" name="celular" required />
+
+        <br /><br />
+
+        <label for="reg-usuario" class="datos">Nombre de Usuario:</label>
+        <input type="text" id="reg-usuario" name="usuario" required />
+
+        <br /><br />
+
+        <label for="reg-password" class="datos">Contraseña:</label>
+        <input type="password" id="reg-password" name="password" required />
+
+        <br /><br />
+
+        <label for="reg-confirm" class="datos">Confirmar Contraseña:</label>
+        <input type="password" id="reg-confirm" name="confirm" required />
+
+        <br /><br />
+
+        <input
+          class="boton1"
+          type="submit"
+          value="Registrarse"
+          style="width: 100%; cursor: pointer"
+        />
       </form>
+
+      <br />
+      <p style="text-align: center; margin: 0">
+        ¿Ya tienes cuenta en Oasis? <br /><br />
+        <button type="button" class="boton1" id="btn-ir-login">
+          Iniciar Sesión
+        </button>
+      </p>
+    </section>
+
+    <!-- 2. VISTA DE INICIO DE SESIÓN (LOGIN) -->
+    <section id="seccion-login" class="formulario" style="display: none">
+      <h2>Iniciar Sesión</h2>
+
+      <!-- Contador de intentos visible (Requisito obligatorio) -->
+      <p
+        id="mensaje-intentos"
+        style="
+          text-align: center;
+          color: #7b1fa2;
+          font-weight: bold;
+          font-size: 14px;
+        "
+      >
+        Intentos permitidos: 3
+      </p>
+
+      <form id="form-login">
+        <label for="login-usuario" class="datos">Usuario:</label>
+        <input type="text" id="login-usuario" name="usuario" required />
+
+        <br /><br />
+
+        <label for="login-password" class="datos">Contraseña:</label>
+        <input type="password" id="login-password" name="password" required />
+
+        <br /><br />
+
+        <input
+          class="boton1"
+          type="submit"
+          value="Ingresar"
+          style="width: 100%; cursor: pointer"
+        />
+      </form>
+
+      <br />
+      <p style="text-align: center; margin: 0">
+        ¿No tienes cuenta? <br /><br />
+        <button type="button" class="boton1" id="btn-ir-registro">
+          Registrarse
+        </button>
+      </p>
+    </section>
+
+    <!-- 3. PANEL TRANSACCIONAL DE PAGO / CAJERO -->
+    <section id="seccion-panel" class="formulario" style="display: none">
+      <h2>Panel de Pagos Oasis</h2>
+      <p
+        id="bienvenida-usuario"
+        style="
+          text-align: center;
+          font-weight: bold;
+          color: #5b168b;
+          font-size: 15px;
+        "
+      ></p>
+
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 15px;
+        "
+      >
+        <button class="boton1" id="btn-consultar-saldo">Consultar Saldo</button>
+        <button class="boton1" id="btn-consignar">Consignar Dinero</button>
+        <button class="boton1" id="btn-retirar">
+          Pagar Servicio / Retirar
+        </button>
+        <button class="boton1" id="btn-movimientos">Ver Movimientos</button>
+        <button class="boton1" id="btn-transferir">Transferir</button>
+        <button class="boton1" id="btn-perfil">Mi Perfil</button>
+        <button
+          class="boton1"
+          id="btn-cerrar-sesion"
+          style="background-color: #f2b8c6; color: #331885"
+        >
+          Cerrar Sesión
+        </button>
+      </div>
     </section>
     <section class="position-fixed">
       <a
@@ -108,13 +220,12 @@
       </a>
     </section>
     <script src="java.js"></script>
-      <footer>
-        <p><strong>OasisSpa</strong></p>
-        <p>Dirección: Calle 25#17a8</p>
-        <p>Teléfono: 1111111</p>
-        <p>Correo: contacto@oasisspa.com</p>
-        <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
+    <footer>
+      <p><strong>OasisSpa</strong></p>
+      <p>Dirección: Calle 25#17a8</p>
+      <p>Teléfono: 1111111</p>
+      <p>Correo: contacto@oasisspa.com</p>
+      <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
-
