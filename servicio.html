@@ -1,181 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Inicio - OasisSpa</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="mifondo">
-    <header class="menuApp position-sticky">
-       <h1>OasisSpa</h1>
-      <!-- menu de inicio con etiqueta a y nav -->
+  <body class="mifondo body-foto fondo-servicio">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="menuApp">
+      <h1>OasisSpa</h1>
       <nav class="menu">
-        <a href="oasis.html">Inicio</a>
-        <a href="servicio.html">Servicio</a>
+        <a href="index.html">Inicio</a>
+        <a href="/servicio.html">Servicio</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-      <!--logo-->
-      <img
-        src="/imagines/spaversion2.png"
-        width="100px"
-        height="100px"
-        class="logo"
-      />
+      <img class="logo" src="/imagines/spaversion2.png" alt="Logo OasisSpa" />
     </header>
-    
-    <section class="bienvenida">
-      <h2 >Experiencias diseñadas para cuidar de ti...</h2>
-      <p >Tu bienestar comienza aquí.</p>
-    </section>
-    
-    <!-- tipos de servicios -->
-     <section class="servicios">
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/aroma terapia.1.jpg" alt="" />
-       <h3>Aromaterapia</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Aromaterapia</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
 
-        </section>
-      </details>
+     <section class="banner-hero hero-servicio">
+  <div class="banner-overlay">
+    <h2>Ponte en Contacto</h2>
+    <p>Estamos listos para agendar tu espacio de bienestar</p>
   </div>
-    
-    <!-- tipos de servicios -->
-  <div class="card">
-      <details class="card">
-        <summary>
-        <img src="imagines/limpieza facial.1.jpg" alt="" />
-       <h3>Limpieza facial</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Limpieza facial</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>645 minutos</p>
-          <p><strong>Precio:</strong>$70.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
+</section>
 
-        </section>
-      </details>
-  </div>
+    <!-- CONTENEDOR PRINCIPAL (Envuelve las secciones del centro) -->
+    <main class="contenedor-principal">
+      <section class="bienvenida">
+        <h2>Experiencias diseñadas para cuidar de ti...</h2>
+        <p>Tu bienestar comienza aquí.</p>
+      </section>
 
-      
-    <!-- tipos de servicios -->
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="" />
-         <h3>Exfoliación Corporal</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Exfoliación Corporal</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
+      <!-- TIPOS DE SERVICIOS -->
+      <section id="seccion-servicios" class="servicios">
+        <!-- Aromaterapia -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img src="imagines/aroma terapia.1.jpg" alt="Aromaterapia" />
+              <h3>Aromaterapia</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Aromaterapia</h2>
+              <p>Disfruta de una experiencia sensorial relajante.</p>
+              <p><strong>Duración:</strong> 60 minutos</p>
+              <p><strong>Precio:</strong> $90.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
 
-        </section>
-      </details>
-  </div>
+        <!-- Limpieza Facial -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img src="imagines/limpieza facial.1.jpg" alt="Limpieza facial" />
+              <h3>Limpieza facial</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Limpieza facial</h2>
+              <p>Tratamiento profundo para revitalizar tu piel.</p>
+              <p><strong>Duración:</strong> 45 minutos</p>
+              <p><strong>Precio:</strong> $70.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
 
-      
-    <!-- tipos de servicios -->
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/masaje relajante.1.png" alt="" />
-       <h3>Masaje Relajante</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Masaje Relajante</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
+        <!-- Exfoliación Corporal -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img
+                src="imagines/exfoliaciòn corporal.1.jpg"
+                alt="Exfoliación Corporal"
+              />
+              <h3>Exfoliación Corporal</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Exfoliación Corporal</h2>
+              <p>Renueva tu piel y elimina toxinas.</p>
+              <p><strong>Duración:</strong> 60 minutos</p>
+              <p><strong>Precio:</strong> $90.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
 
-        </section>
-      </details>
-  </div>
+        <!-- Masaje Relajante -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img
+                src="imagines/masaje relajante.1.png"
+                alt="Masaje Relajante"
+              />
+              <h3>Masaje Relajante</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Masaje Relajante</h2>
+              <p>Libera tensiones acumuladas en el cuerpo.</p>
+              <p><strong>Duración:</strong> 60 minutos</p>
+              <p><strong>Precio:</strong> $90.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
 
-      
-    <!-- tipos de servicios -->
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/hidromasaje.1.webp" alt="" />
-       <h3>Hidromasaje</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Hidromasaje</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
+        <!-- Hidromasaje -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img src="imagines/hidromasaje.1.webp" alt="Hidromasaje" />
+              <h3>Hidromasaje</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Hidromasaje</h2>
+              <p>Terapia de agua para relajación muscular.</p>
+              <p><strong>Duración:</strong> 60 minutos</p>
+              <p><strong>Precio:</strong> $90.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
 
-        </section>
-      </details>
-  </div>
-  
-      
-    <!-- tipos de servicios -->
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/aroma terapia.1.jpg" alt="" />
-       <h3>Piedras Calientes</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Piedras Calientes</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
+        <!-- Piedras Calientes -->
+        <div class="contenedor-card">
+          <details class="card">
+            <summary>
+              <img src="imagines/aroma terapia.1.jpg" alt="Piedras Calientes" />
+              <h3>Piedras Calientes</h3>
+            </summary>
+            <section class="informacion">
+              <h2>Piedras Calientes</h2>
+              <p>Calor terapéutico para aliviar contracturas.</p>
+              <p><strong>Duración:</strong> 60 minutos</p>
+              <p><strong>Precio:</strong> $90.000</p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </section>
+          </details>
+        </div>
+      </section>
+    </main>
 
-        </section>
-      </details>
-  </div>
-
-      
-    <!-- tipos de servicios -->
-  <div class="contenedor-card">
-      <details class="card">
-        <summary>
-        <img src="imagines/aroma terapia.1.jpg" alt="" />
-       <h3>Aromaterapia</h3>
-        </summary>
-        <section class="informacion">
-          <h2>Aromaterapia</h2>
-          <p>disfruta</p>
-          <p><strong>Duracion:</strong>60 minutos</p>
-          <p><strong>Precio:</strong>$90.000</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJEtI0Pb-aU?si=5LyUK43jJMPxtszf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictur" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>">
-
-        </section>
-      </details>
-  </div>
-      
-     </section>
-
-
-    <section class="position-fixed">
+    <!-- WHATSAPP FLOTANTE -->
+    <aside class="posicion-whatsapp">
       <a
-        href="https://wa.me/573001112233?text=Hola,%20esta%20es%20una%20prueba"
+        href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <img
-          class="whatsapp-imagines"
           src="imagines/imagen_whast.png"
-          alt="whatsapp"
+          alt="Contacto vía WhatsApp"
+          class="whatsapp-imagen"
         />
       </a>
-    </section>
+    </aside>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <p><strong>OasisSpa</strong></p>
+      <p>Dirección: Calle 25#17a8</p>
+      <p>Teléfono: 1111111</p>
+      <p>Correo: contacto@oasisspa.com</p>
+      <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
+    </footer>
   </body>
 </html>

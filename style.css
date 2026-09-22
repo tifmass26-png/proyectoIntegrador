@@ -1,35 +1,100 @@
-/* == encabezado==*/
+/* ESTILOS GENERALES Y ENCABEZADO*/
 
-.bienvenida{
-    text-align:center;
-    padding:40px;
+body {
+    margin: 0;
+    padding-top: 90px; /* Reducido para eliminar el espacio vacío superior */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.bienvenida h2{
-    font-size:40px;
-    color:#7b1fa2;
+.mifondo {
+    background-color: #e6c6df;
+}
+
+h1 {
+    color: rgb(161, 133, 162);
+    block-size: 15px;
+}
+
+#parrafo {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.bienvenida {
+    text-align: center;
+    padding: 40px;
+}
+
+.bienvenida h2 {
+    font-size: 40px;
+    color: #7b1fa2;
     animation: aparecer 2s ease;
 }
 
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(-40px);
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 .pmensajedenostros {
-    color:#331885;
+    color: #331885;
 }
 
-/* == POSITION ==*/
+/*POSICIONAMIENTO Y NAVEGACIÓN */
 
+.menuApp {
+    background-color: #d8def5;
+    display: flex;
+    justify-content: space-between; /* Distribuye OasisSpa a la izquierda y el menú al centro */
+    align-items: center;
+    padding: 10px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
 
-.position-fixed-oasis{
+.menuApp h1 {
+    position: static; /* Quita el posicionamiento absoluto que causaba solapamiento */
+    color: purple;
+    font-size: 40px;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: #c7a7ff;
+}
+
+.logo {
+    position: static; /* Mantiene el logo en su lugar sin salirse */
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+/* POSICIONAMIENTO DE ELEMENTOS 
+.position-fixed-oasis {
     text-align: center;
     font-size: 70px;
     color: purple;
@@ -37,455 +102,330 @@
     padding-top: 20px;
 }
 
-.position-sticky-inicio{
-position: absolute;
-left:420px;
-top: 4cap;
-right:100px;
-}
-.position-sticky-servicio{
-  position: absolute;
-left:490px;
- top: 4cap;
-right:200px;
-}
-.position-sticky-contacto{
+.position-sticky-inicio {
     position: absolute;
-left:680px;
-top: 4cap;
-right: 75px;
+    left: 420px;
+    top: 4cap;
+    right: 100px;
 }
-.position-sticky-nosotros{
-      position: absolute;
-left:580px;
-top: 4cap;
-right: 65px;
-}
-/*
-.position-sticky-img{
-    position: absolute;
-left: 120cap;
-top:20px;
 
+.position-sticky-servicio {
+    position: absolute;
+    left: 490px;
+    top: 4cap;
+    right: 200px;
+}
+
+.position-sticky-contacto {
+    position: absolute;
+    left: 680px;
+    top: 4cap;
+    right: 75px;
+}
+
+.position-sticky-nosotros {
+    position: absolute;
+    left: 580px;
+    top: 4cap;
+    right: 65px;
 }
 */
-
-
-.logo{
-    position: absolute;
-    right: 95px;
-    top: 10px;
-
-    width: 90px;
-    border-radius: 50px;
-}
-@keyframes girar {
-    from { transform: rotate(180deg);}
-
-to { transform: rotate(360deg);
-}
-}
-.position-relative-cuadro-grande-1{
+.position-relative-cuadro-grande-1 {
     position: relative;
-  left: 50px;
-  bottom: 100px;
+    left: 50px;
+    bottom: 100px;
 }
 
 .position-sticky {
-  position:sticky;
-  top:0px;
-  background-color: #171818;
+    position: sticky;
+    top: 0px;
 }
-.position-fixed{
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+
+.posicion-whatsapp {
     position: fixed;
-    bottom: 5px;
-    right: -280px;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
 }
-/*@keyframes crea una animación.
-latido es el nombre de esa animación.
-0% es el inicio.
-50% es la mitad.
-100% es el final.
-transform: scale() cambia el tamaño del elemento.
-animation: latido 1s infinite; esta animacion ayuda a reducir varias veces que les des clic*/
-.whatsapp-imagines{
-    width: 20%;
-    height: 30%;
-    border-radius: 40%;
+
+.whatsapp-imagen {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     border: solid 2px greenyellow;
-    animation:latido 1s infinite;
-}
-@keyframes latido{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
-}
-.datos{
-    box-shadow: none;
-    font-style:normal;
-    text-shadow: 35px;
-    font-family:
-          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    animation: latido 1.5s infinite ease-in-out;
+    transition: transform 0.3s ease;
 }
 
-
-
-/* === DISPLAY ===
-.display-inLine-block {
-    display: inline-block;
-    margin-left: 40px;
-    margin-right: 20px;
-}
-/* === DISPLAY ===*/
-
-
-h1 {
-  color:rgb(161, 133, 162);
-  block-size: 15px;
-
-
+.whatsapp-imagen:hover {
+    transform: scale(1.15);
 }
 
-#parrafo{
-    font-size: 20px;
-    line-height: 1.5;
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
+/*COMPONENTES Y TARJETAS */
 
-.cajamediana{
-  background-color: azure;
-  text-shadow: 15px;
+.cajamediana {
+    background-color: azure;
+    text-shadow: 15px;
     width: 100px;
     height: 30px;
     border-radius: 8px;
-box-shadow: 12px;
-font-style: oblique;
-text-decoration:rgb(152, 122, 165);
-font-family: Arial, Helvetica, sans-serif;
-text-decoration-color: rgb(133, 11, 11);
-margin: 5px;
-
+    box-shadow: 12px;
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
 }
 
-.cajacentral-1{
-background-color: azure;
-  text-shadow: 15px;
+.cajacentral-1 {
+    background-color: azure;
+    text-shadow: 15px;
     width: 200px;
     height: 150px;
     border-radius: 8px;
-box-shadow: 15px;
-font-style: oblique;
-text-decoration:rgb(18, 119, 119);
-font-family: Arial, Helvetica, sans-serif;
-text-decoration-color: black;
-margin: 10px;
-
-}
-/* FONDO GENERAL */
-.mifondo{
-    background-color: #e6c6df;
-}
-/* padding =espacio que se tiene entre imganen,texto y botones*/
-/* cuando se coloca en un stylo css el (*) selector universal( aplica a todos los elementos 
-de la pagina no importa si es id,class etc.. quitar espacios automaticos entre espacios de pagina*/
-/*box-sizing: border-box el tamaño del elemento incluya el padding y el  border dentro del ancho*/
-
-
-/* BODY */
-
-body{
-    margin: 0;
-    padding-top: 130px;
+    box-shadow: 15px;
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
 
-/* TITULO */
-.menuApp{
-    background-color: #d8def5;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px 40px;
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    box-sizing: border-box;
-}
-/* TITULO */
-.menuApp h1{
-    position: absolute;
-    left: 40px;
-
-    color: purple;
-    font-size: 55px;
-    margin: 0;
-}
-
-/* MENU */
-
-/* MENU */
-.menu{
-    display: flex;
-    gap: 40px;
-}
-
-
-/* cuando el mouse pase por encima de un enlace <a> que este adentro de la clase menu 
-esto indica que cuando el maus pase por el botton cambie de color*/
-
-.menu a:hover{
-    background-color: #c7a7ff;
-}
-.menu a{
-    text-decoration: none;
-    color: blue;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-/* SERVICIOS */
-
-.servicios{
+.servicios {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 25px;
     flex-wrap: wrap;
     padding: 40px;
-
 }
-/* TARJETAS */
-/* padding =espacio que se tiene entre imganen,texto y botones*/
 
-.card{
-    transition:0.4s;
+.card {
+    transition: 0.4s;
     background-color: white;
     width: 320px;
-    flex: 0 0 320 px;
+    flex: 0 0 320px;
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
 }
 
-.card summary{ 
-    list-style:none;
-cursor: pointer;
+.card summary { 
+    list-style: none;
+    cursor: pointer;
 }
 
-.card summary:--webkit-details-marker{
-    display: none;
-}
-
-.contenedor-card{
+.contenedor-card {
     width: 320px;
     flex: 0 0 320px;
 }
-.informacion{
+
+.informacion {
     padding: 20px;
     background-color: white;
 }
 
-.informacion video{
-width: 100%;
-border-radius: 15px;
+.informacion video {
+    width: 100%;
+    border-radius: 15px;
 }
 
-.informacion iframe{
+.informacion iframe {
     width: 100%;
     height: 180px;
     border-radius: 15px;
 }
-.card:hover{
-    transform:translateY(-10px);
-}
-/* IMAGENES */
 
-.card img{
-    transition:0.5s;
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    transition: 0.5s;
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
-.card:hover img{
-    transform:scale(1.08);
+
+.card:hover img {
+    transform: scale(1.08);
 }
 
-.card h3{
+.card h3 {
     color: #7b4fa3;
     padding: 15px;
+    margin-top: 15px;
 }
 
-/* SECCION ROSADA */
-.descripcion{
+.descripcion {
     background-color: #f2b8c6;
     padding: 40px 80px;
     text-align: center;
 }
 
-/* NOMBRES */
+/* SECCIÓN DE CONTACTO */
 
-.card h3{
-    margin-top: 15px;
-    color: #7c5aa6;
+.contenedor-contacto {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* FORMULARIO */
+.seccion-secciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 25px;
+    justify-content: center;
+}
 
-.formulario{
-    width: 400px;
-
-    margin: 50px auto;
-
-    background-color: rgb(249, 239, 239);
-
+.tarjeta-info, 
+.tarjeta-formulario {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
     padding: 25px;
+    flex: 1 1 420px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
+.tarjeta-info h3, 
+.tarjeta-formulario h3 {
+    margin-bottom: 15px;
+    color: #4a154b;
+}
+
+.datos-contacto {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.dato-item {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.dato-item strong {
+    color: #222;
+}
+
+.contenedor-mapa {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.formulario {
+    width: 400px;
+    margin: 50px auto;
+    background-color: rgb(249, 239, 239);
+    padding: 25px;
     border-radius: 20px;
 }
 
-
-.formulario h2{
+.formulario h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #8b68b5;
 }
 
-/* CAMPOS */
+.formulario .campo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
 
-form input,
-form select{
+.formulario label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: bold;
+}
+
+.formulario input, 
+.formulario textarea,
+form select {
     width: 100%;
-    padding: 8px;
-
-    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
-.boton1{
-
-background-color: #c7a7ff;
-font-size: 15px;
-
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: #8a2be2;
 }
 
-.boton1:hover{
-background-color: #167070;
-font-size: 10px;
-border-radius: 10px;
-padding: 8px;
-color: rgb(77, 19, 83);
-}
-body{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+.btn-enviar {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.formulario-contacto{
-    margin-left: 30px;
-    margin-right: auto;
+.btn-enviar:hover {
+    background-color: #6a1b9a;
 }
-.menu{
+
+.distribucion-contacto {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-/* todos los <a> que estén dentro de .menu*/
-.menu a{
-    text-decoration: none;
-    font-size: 25px;
-    color: blue;
-    font-weight: bold;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* se agrega responsive para celular con tipo de letra y tamaños*/
-
-@media (max-width: 768px){
-
-    .menuApp{
-        flex-direction: column;
-        padding: 10px;
-        box-sizing: border-box;
-         
-    }
-    
-
-    .menuApp h1{
-        position: static;
-        font-size: 35px;
-        margin-bottom: 10px;
-    }
-
-    .menu{
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .menu a{
-        font-size: 18px;
-    }
-
-    .logo{
-        position: static;
-        width: 70px;
-        height: auto;
-        margin-top: 10px;
-    }
-
-    body{
-        padding-top: 180px;
-    }
-
-    .descripcion{
-        padding: 20px;
-    }
-
-    .formulario{
-        width: 90%;
-    }
+.tarjeta-lateral {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 250px;
+    max-width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* mesnaje de derechos reservados */
-
-footer{
-    background-color: #b7bce3;
-    color: #4b0082;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: bold;
+.tarjeta-lateral h3 {
+    color: #4a154b;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
-/*botones de servicios*/
+.tarjeta-lateral details {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
 
-/* PAGINA NOSOTROS */
+.resaltado {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/*  SECCIÓN NOSOTROS Y PIE DE PÁGINA (FOOTER) */
 
 .portadaNosotros {
     background-color: #d9c9e8;
     text-align: center;
     padding: 45px 20px;
     animation: aparecer 1.5s ease;
-}
-
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
 .portadaNosotros h2 {
@@ -497,9 +437,6 @@ footer{
 .portadaNosotros p {
     color: #32166b;
 }
-
-
-/* HISTORIA */
 
 .historiaNosotros {
     background-color: #f2b7c7;
@@ -525,9 +462,6 @@ footer{
     margin-bottom: 20px;
 }
 
-
-/* MISION Y VISION */
-
 .misionVision {
     background-color: #d8d9f0;
     padding: 50px;
@@ -547,9 +481,6 @@ footer{
 .misionVision h2 {
     color: #5b168b;
 }
-
-
-/* VALORES */
 
 .valoresNosotros {
     background-color: #f7e3ef;
@@ -576,27 +507,72 @@ footer{
     color: #32166b;
 }
 
+footer {
+    background-color: #b5b9df;
+    color: #4b0082;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
 
-/* RESPONSIVE */
+footer p {
+    margin: 10px;
+}
+
+/*  DISEÑO ADAPTATIVO */
 
 @media (max-width: 768px) {
-
-    .historiaNosotros {
-        display: block;
-        padding: 30px;
+    .menuApp {
+        flex-direction: column;
+        padding: 10px;
+        box-sizing: border-box;
     }
 
-    .historiaNosotros article {
-        width: 100%;
+    .menuApp h1 {
+        position: static;
+        font-size: 35px;
+        margin-bottom: 10px;
     }
 
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        font-size: 18px;
+    }
+
+    .logo {
+        position: static;
+        width: 70px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    body {
+        padding-top: 180px;
+    }
+
+    .descripcion {
+        padding: 20px;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+
+    .historiaNosotros, 
     .misionVision {
         display: block;
         padding: 30px;
     }
 
+    .historiaNosotros article, 
     .misionVision article {
-        width: auto;
+        width: 100%;
         margin-bottom: 20px;
     }
 
@@ -606,22 +582,165 @@ footer{
         margin: 20px 0;
     }
 
-    .contactos{
-            background-color: #f2b7c7;
-    padding: 50px;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
+    .contactos {
+        background-color: #f2b7c7;
+        padding: 50px;
+        display: flex;
+        gap: 40px;
+        justify-content: center;
     }
 }
-footer {
-    background-color: #b5b9df;
-    color: #4b0082;
-    text-align: center;
-    padding: 30px;
-    margin-top: 30px;
+
+/*CONFIGURACIÓN DE ANCHO GENERAL Y CENTRADO*/
+
+.contenedor-principal {
+    max-width: 1300px; /* Ajuste ideal entre 1200px y 1400px */
+    width: 90%;
+    margin: 0 auto;    /* Centra todo el contenido horizontalmente */
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
-footer p {
-    margin: 10px;
+/* BANNER SUPERIOR  */
+
+.banner-hero {
+    width: 100vw;               /* Ocupa el 100% exacto de la pantalla */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;        /* Elimina los márgenes laterales */
+    margin-right: -50vw;
+    margin-top: 0;
+    margin-bottom: 30px;
+    height: 300px;
+    background-image: url('imagenes/banner-spa.jpg'); /* Tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-overlay {
+    background-color: rgba(123, 79, 163, 0.6); /* Fondo lila semitransparente mientras carga la imagen */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.banner-overlay h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.banner-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* BANNER CON COLOR ORIGINAL DE LA FOTO */
+.banner-hero {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+}
+
+/* Superposición transparente (sin tinte de color) */
+.banner-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Oscurece un 20% la imagen solo para dar contraste al texto, sin cambiar los colores */
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+/* Sombra en el texto para garantizar legibilidad */
+.banner-overlay h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.banner-overlay p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ==========================================================================
+   CONFIGURACIÓN DE FONDO GENERAL PARA EL BODY
+   ========================================================================== */
+
+.body-foto {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+}
+
+/* --------------------------------------------------
+   IMÁGENES DE FONDO INDIVIDUALES POR PÁGINA
+   -------------------------------------------------- */
+
+/* Fondo para Inicio */
+body.fondo-inicio {
+    background-image: url('/Imagenes_De_Fondo/decoracion\ de\ relax.png');
+}
+
+/* Fondo para Servicios */
+body.fondo-servicio {
+    background-image: url('/Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png');
+}
+
+/* Fondo para Nosotros */
+body.fondo-nosotros {
+    background-image: url('/Imagenes_De_Fondo/masaje\ de\ loto.png');
+}
+
+/* Fondo para Contacto (Tu imagen del masaje) */
+body.fondo-contacto {
+    background-image: url('/Imagenes_De_Fondo/serivico\ de\ tranquilidad.png');
+}
+
+/* --------------------------------------------------
+   AJUSTE DE TARJETAS Y CONTENEDOR PARA FACILITAR LA LECTURA
+   -------------------------------------------------- */
+
+/* Fondo semi-transparente para que el texto sobre la foto sea legible */
+.contenedor-principal, 
+.contenedor-contacto,
+.tarjeta-info, 
+.tarjeta-formulario,
+.tarjeta-lateral {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }

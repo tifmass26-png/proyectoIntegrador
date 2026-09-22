@@ -6,9 +6,8 @@
     <title>proyecto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="mifondo">
-    
-    <header class="menuApp position-sticky">
+  <body class="mifondo body-foto fondo-inicio">
+    <header class="menuApp">
       <h1>OasisSpa</h1>
       <nav class="menu">
         <a href="index.html">Inicio</a>
@@ -16,11 +15,18 @@
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-      <!--logo empresa-->
-      <img src="imagines/spaversion2.png" class="logo" />
-      <br />
+      <img class="logo" src="/imagines/spaversion2.png" alt="Logo OasisSpa" />
     </header>
-    <section  class="descripcion">
+
+     <section class="banner-hero hero-inicio">
+  <div class="banner-overlay">
+    <h2>Ponte en Contacto</h2>
+    <p>Estamos listos para agendar tu espacio de bienestar</p>
+  </div>
+</section>
+
+   
+    <section class="descripcion">
       <p id="parrafo">
         Nuestra empresa esta orientada para las personas que quieren tener un
         momento de tranquila y salir de su zona de confort dandoles un plus de
@@ -96,27 +102,28 @@
         <input class="boton1" type="submit" value="Enviar" />
       </form>
     </section>
-    <section class="position-fixed">
+
+    <aside class="posicion-whatsapp">
       <a
-        href="https://wa.me/573001112233?text=Hola,%20esta%20es%20una%20prueba"
+        href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <img
-          class="whatsapp-imagines"
-          src="imagines/imagen_whast.png"
-          alt="whast"
+          src="/imagines/imagen_whast.png"
+          alt="Contacto vía WhatsApp"
+          class="whatsapp-imagen"
         />
       </a>
-    </section>
+    </aside>
     <script src="java.js"></script>
-  
+
     <footer>
-        <p><strong>OasisSpa</strong></p>
-        <p>Dirección: Calle 25#17a8</p>
-        <p>Teléfono: 1111111</p>
-        <p>Correo: contacto@oasisspa.com</p>
-        <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
+      <p><strong>OasisSpa</strong></p>
+      <p>Dirección: Calle 25#17a8</p>
+      <p>Teléfono: 1111111</p>
+      <p>Correo: contacto@oasisspa.com</p>
+      <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
     </footer>
   </body>
-  
 </html>
