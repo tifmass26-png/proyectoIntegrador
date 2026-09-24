@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>proyecto</title>
+    <title>OasisSpa - Reservas</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="mifondo">
@@ -16,173 +16,131 @@
         <a href="contacto.html">Contacto</a>
       </nav>
       <!--logo empresa-->
-      <img src="imagines/spaversion2.png" class="logo" />
+      <img src="imagines/spaversion2.png" class="logo" alt="Logo OasisSpa" />
       <br />
     </header>
+
     <section class="descripcion">
       <p id="parrafo">
-        Nuestra empresa esta orientada para las personas que quieren tener un
-        momento de tranquila y salir de su zona de confort dandoles un plus de
-        relajacion y desconectarse con el mundo,Adicional ofrecemos diferentes
-        planes familiar,parejas,amigos.etc
+        Nuestra empresa está orientada para las personas que quieren tener un
+        momento de tranquilidad y salir de su zona de confort dándoles un plus de
+        relajación y desconectarse con el mundo. Adicionalmente ofrecemos diferentes
+        planes familiar, parejas, amigos, etc.
       </p>
     </section>
 
     <section class="servicios">
       <div class="card">
-        <img src="imagines/aroma terapia.1.jpg" alt="" />
+        <img src="imagines/aroma terapia.1.jpg" alt="Aromaterapia" />
         <h3>Aromaterapia</h3>
       </div>
 
       <div class="card">
-        <img src="imagines/limpieza facial.1.jpg" alt="" />
+        <img src="imagines/limpieza facial.1.jpg" alt="Limpieza Facial" />
         <h3>Limpieza Facial</h3>
       </div>
 
       <div class="card">
-        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="" />
+        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="Exfoliación Corporal" />
         <h3>Exfoliación Corporal</h3>
       </div>
 
       <div class="card">
-        <img src="imagines/masaje relajante.1.png" alt="" />
+        <img src="imagines/masaje relajante.1.png" alt="Masaje Relajante" />
         <h3>Masaje Relajante</h3>
       </div>
 
       <div class="card">
-        <img src="imagines/hidromasaje.1.webp" alt="" />
+        <img src="imagines/hidromasaje.1.webp" alt="Hidromasaje" />
         <h3>Hidromasaje</h3>
       </div>
 
       <div class="card">
-        <img src="imagines/piedras-calientes-scaled.jpg" alt="" />
+        <img src="imagines/piedras-calientes-scaled.jpg" alt="Piedras Calientes" />
         <h3>Piedras Calientes</h3>
       </div>
     </section>
-  
 
-    <!-- 1. VISTA DE REGISTRO / RESERVA -->
-    <section id="seccion-registro" class="formulario">
-      <h2>Reserva tu experiencia</h2>
+    <!-- PANEL DIRECTO DE RESERVAS Y PAGO -->
+    <main id="seccion-panel" class="panel-spa formulario">
+      <header class="panel-encabezado">
+        <h2 class="texto-bienvenida">Reserva tu Experiencia</h2>
+      </header>
 
-      <form id="form-registro">
-        <label for="reg-identificacion" class="datos"
-          >Número de Identificación:</label
-        >
-        <input
-          type="text"
-          id="reg-identificacion"
-          name="identificacion"
-          required
-        />
+      <section class="reserva-grid">
+        <!-- COLUMNA 1: SELECCIÓN DE SERVICIOS Y CARRITO -->
+        <article class="tarjeta-reserva">
+          <h3 class="subtitulo">1. Agendar Servicios</h3>
+          
+          <label for="select-servicio" class="datos">Selecciona un servicio:</label>
+          <select id="select-servicio" class="input-select">
+            <option value="Aromaterapia|50000">Aromaterapia - $50.000</option>
+            <option value="Limpieza Facial|70000">Limpieza Facial - $70.000</option>
+            <option value="Exfoliación Corporal|60000">Exfoliación Corporal - $60.000</option>
+            <option value="Masaje Relajante|80000">Masaje Relajante - $80.000</option>
+            <option value="Hidromasaje|90000">Hidromasaje - $90.000</option>
+            <option value="Piedras Calientes|85000">Piedras Calientes - $85.000</option>
+          </select>
 
-        <br /><br />
+          <br /><br />
+          <button type="button" id="btn-agregar-servicio" class="boton1">➕ Añadir al Carrito</button>
 
-        <label for="reg-nombre" class="datos">Nombre Completo:</label>
-        <input type="text" id="reg-nombre" name="nombre" required />
+          <h4 class="titulo-carrito">Tu Carrito de Experiencias:</h4>
+          <ul id="lista-carrito" class="lista-carrito"></ul>
+          
+          <p class="resumen-monto">Total A Pagar: <span id="total-pagar" class="monto-destacado">$0</span></p>
+        </article>
 
-        <br /><br />
+        <!-- COLUMNA 2: DATOS DEL CLIENTE Y MÉTODO DE PAGO -->
+        <article class="tarjeta-pago">
+          <h3 class="subtitulo">2. Datos de Contacto y Pago</h3>
+          
+          <form id="form-checkout" class="formulario-pago">
+            <label for="cliente-nombre" class="datos">Nombre Completo:</label>
+            <input type="text" id="cliente-nombre" class="input-select" placeholder="Ej. Ana María Pérez" required />
 
-        <label for="reg-celular" class="datos">Teléfono / Celular:</label>
-        <input type="text" id="reg-celular" name="celular" required />
+            <br /><br />
 
-        <br /><br />
+            <label for="cliente-telefono" class="datos">Teléfono / WhatsApp:</label>
+            <input type="tel" id="cliente-telefono" class="input-select" placeholder="Ej. 3001234567" required />
 
-        <label for="reg-usuario" class="datos">Nombre de Usuario:</label>
-        <input type="text" id="reg-usuario" name="usuario" required />
+            <br /><br />
 
-        <br /><br />
+            <label for="metodo-pago" class="datos">Método de Pago:</label>
+            <select id="metodo-pago" class="input-select" required>
+              <option value="">-- Seleccionar Método --</option>
+              <option value="PSE">PSE (Débito Bancario)</option>
+              <option value="Bancolombia">Transferencia Bancolombia / Nequi</option>
+              <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+            </select>
 
-        <label for="reg-password" class="datos">Contraseña:</label>
-        <input type="password" id="reg-password" name="password" required />
+            <br /><br />
 
-        <br /><br />
+            <label for="observaciones" class="datos">Observaciones o alergias (Opcional):</label>
+            <textarea id="observaciones" class="input-textarea" rows="2" placeholder="Ej. Alergia a aceites..."></textarea>
 
-        <label for="reg-confirm" class="datos">Confirmar Contraseña:</label>
-        <input type="password" id="reg-confirm" name="confirm" required />
+            <br /><br />
 
-        <br /><br />
+            <button type="submit" class="boton1 btn-confirmar">💳 Pagar y Confirmar Reserva</button>
+          </form>
+        </article>
+      </section>
+    </main>
 
-        <input
-          class="boton1"
-          type="submit"
-          value="Registrarse"
-          style="width: 100%; cursor: pointer"
-        />
-      </form>
-
-      <br />
-      <p style="text-align: center; margin: 0">
-        ¿Ya tienes cuenta en Oasis? <br /><br />
-        <button type="button" class="boton1" id="btn-ir-login">
-          Iniciar Sesión
-        </button>
-      </p>
-    </section>
-
-    <!--  DE INICIO DE SESIÓN (LOGIN) -->
-    <section id="seccion-login" class="formulario" style="display: none">
-      <h2>Iniciar Sesión</h2>
-
-      <p id="mensaje-intentos" class="texto-intentos">
-  Intentos permitidos: 3
-</p>
-
-      <form id="form-login">
-        <label for="login-usuario" class="datos">Usuario:</label>
-        <input type="text" id="login-usuario" name="usuario" required />
-
-        <br /><br />
-
-        <label for="login-password" class="datos">Contraseña:</label>
-        <input type="password" id="login-password" name="password" required />
-
-        <br /><br />
-
-        <input
-          class="boton1"
-          type="submit"
-          value="Ingresar"
-          style="width: 100%; cursor: pointer"
-        />
-      </form>
-
-      <br />
-      <p style="text-align: center; margin: 0">
-        ¿No tienes cuenta? <br /><br />
-        <button type="button" class="boton1" id="btn-ir-registro">
-          Registrarse
-        </button>
-      </p>
-    </section>
-
-    <!-- 3. PANEL TRANSACCIONAL DE PAGO / CAJERO -->
-    <section id="seccion-panel" class="formulario oculto">
-  <h2>Panel de Pagos Oasis</h2>
-  <p id="bienvenida-usuario" class="texto-bienvenida"></p>
-
-  <section class="menu-botones">
-    <button class="boton1" id="btn-consultar-saldo">Consultar Saldo</button>
-    <button class="boton1" id="btn-consignar">Consignar Dinero</button>
-    <button class="boton1" id="btn-retirar">Pagar Servicio / Retirar</button>
-    <button class="boton1" id="btn-movimientos">Ver Movimientos</button>
-    <button class="boton1" id="btn-transferir">Transferir</button>
-    <button class="boton1" id="btn-perfil">Mi Perfil</button>
-    <button class="boton1 btn-cerrar" id="btn-cerrar-sesion">Cerrar Sesión</button>
-  </section>
-</section>
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
     <section class="position-fixed">
       <a
-        href="https://wa.me/573001112233?text=Hola,%20esta%20es%20una%20prueba"
+        href="https://wa.me/573001112233?text=Hola,%20quisiera%20consultar%20sobre%20una%20reserva"
         target="_blank"
       >
         <img
           class="whatsapp-imagines"
           src="imagines/imagen_whast.png"
-          alt="whast"
+          alt="whatsapp"
         />
       </a>
     </section>
+
     <script src="java.js"></script>
 
     <footer>
