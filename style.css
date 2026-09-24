@@ -711,17 +711,17 @@ footer p {
 
 /* Fondo para Inicio */
 body.fondo-inicio {
-    background-image: url('/Imagenes_De_Fondo/decoracion\ de\ relax.png');
+    background-image: url('Imagenes_De_Fondo/decoracion\ de\ relax.png');
 }
 
 /* Fondo para Servicios */
 body.fondo-servicio {
-    background-image: url('/Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png');
+    background-image: url('Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png');
 }
 
 /* Fondo para Nosotros */
 body.fondo-nosotros {
-    background-image: url('/Imagenes_De_Fondo/masaje\ de\ loto.png'); /* o 'masaje de loto.png' */
+    background-image: url('Imagenes_De_Fondo/masaje\ de\ loto.png'); /* o 'masaje de loto.png' */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -730,7 +730,7 @@ body.fondo-nosotros {
 
 /* Fondo para Contacto (Tu imagen del masaje) */
 body.fondo-contacto {
-    background-image: url('/Imagenes_De_Fondo/serivico\ de\ tranquilidad.png');
+    background-image: url('Imagenes_De_Fondo/serivico\ de\ tranquilidad.png');
 }
 
 /* --------------------------------------------------
