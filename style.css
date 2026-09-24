@@ -264,9 +264,19 @@ h1 {
 }
 
 .descripcion {
-    background-color: #f2b8c6;
-    padding: 40px 80px;
-    text-align: center;
+  background-color: rgba(247, 196, 206, 0.65); 
+  width: 100%;                          
+  padding: 20px 40px;                    
+  text-align: center;                    
+  box-sizing: border-box;                 
+}
+
+.descripcion p {
+  margin: 0;                             
+  color: #333333;                        
+  font-size: 1rem;                       
+  line-height: 1.5;                      
+  font-weight: 500;
 }
 
 /* SECCIÓN DE CONTACTO */
