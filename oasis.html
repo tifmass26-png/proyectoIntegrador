@@ -26,39 +26,11 @@
     </section>
 
     <section class="descripcion">
-      <p id="parrafo"<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OasisSpa - Reservas</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="mifondo body-foto fondo-inicio">
-    <header class="menuApp">
-      <h1>OasisSpa</h1>
-      <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="servicio.html">Servicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-      <img class="logo" src="imagines/spaversion2.png" alt="Logo OasisSpa" />
-    </header>
-
-    <section class="banner-hero hero-inicio">
-      <div class="banner-overlay">
-        <h2>Ponte en Contacto</h2>
-        <p>Estamos listos para agendar tu espacio de bienestar</p>
-      </div>
-    </section>
-
-    <section class="descripcion">
       <p class="descripcion-p">
-       <h2>Nuestra Empresa Nuestra empresa esta orientada para las personas que quieren tener un
-        momento de tranquila y salir de su zona de confort dandoles un plus de
-        relajacion y desconectarse con el mundo,Adicional ofrecemos diferentes
-        planes familiar,parejas,amigos.etc</h2>
+        Nuestra empresa está orientada para las personas que quieren tener un
+        momento de tranquilidad y salir de su zona de confort dándoles un plus
+        de relajación y desconectarse del mundo. Adicionalmente ofrecemos
+        diferentes planes (familiar, parejas, amigos, etc.).
       </p>
     </section>
 
@@ -74,125 +46,10 @@
       </div>
 
       <div class="card">
-        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="Exfoliación Corporal" />
-        <h3>Exfoliación Corporal</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/masaje relajante.1.png" alt="Masaje Relajante" />
-        <h3>Masaje Relajante</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/hidromasaje.1.webp" alt="Hidromasaje" />
-        <h3>Hidromasaje</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/masaje relajante.1.png" alt="Piedras Calientes" />
-        <h3>Piedras Calientes</h3>
-      </div>
-    </section>
-
-    <!-- FORMULARIO REESTRUCTURADO DE RESERVA Y PAGO -->
-    <section class="formulario">
-      <h2>Reserva tu experiencia</h2>
-
-      <form id="form-checkout">
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4A154B; font-size: 1rem;">1. Agendar Servicios</h3>
-        
-        <label for="select-servicio" class="datos">Selecciona un servicio:</label>
-        <select id="select-servicio" style="width: 100%; padding: 6px; margin-bottom: 8px; border-radius: 4px; border: 1px solid #ccc;">
-          <option value="Aromaterapia|50000">Aromaterapia - $50.000</option>
-          <option value="Limpieza Facial|70000">Limpieza Facial - $70.000</option>
-          <option value="Exfoliación Corporal|60000">Exfoliación Corporal - $60.000</option>
-          <option value="Masaje Relajante|80000">Masaje Relajante - $80.000</option>
-          <option value="Hidromasaje|90000">Hidromasaje - $90.000</option>
-          <option value="Piedras Calientes|85000">Piedras Calientes - $85.000</option>
-        </select>
-
-        <button type="button" id="btn-agregar-servicio" class="boton1" style="width: 100%; margin-bottom: 10px;">
-          ➕ Añadir al Carrito
-        </button>
-
-        <div style="border-top: 1px dashed #ccc; padding-top: 8px; margin-bottom: 15px;">
-          <h4 style="margin: 0; font-size: 0.9rem;">Tu Carrito:</h4>
-          <ul id="lista-carrito" style="list-style: none; padding: 0; margin: 8px 0; font-size: 0.85rem;"></ul>
-          <p style="font-weight: bold; font-size: 0.9rem; text-align: right; margin: 0;">
-            Total: <span id="total-pagar" style="color: #6B46C1;">$0</span>
-          </p>
-        </div>
-
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4A154B; font-size: 1rem;">2. Datos de Contacto y Pago</h3>
-
-        <label for="cliente-nombre" class="datos">Nombre completo:</label>
-        <input type="text" id="cliente-nombre" required placeholder="Ej. Ana María Pérez" /><br />
-
-        <label for="cliente-telefono" class="datos">Teléfono / WhatsApp:</label>
-        <input type="tel" id="cliente-telefono" required placeholder="Ej. 3001234567" /><br />
-
-        <label for="metodo-pago" class="datos">Método de Pago:</label>
-        <select id="metodo-pago" required style="width: 100%; padding: 6px; margin-bottom: 8px; border-radius: 4px; border: 1px solid #ccc;">
-          <option value="">-- Seleccionar --</option>
-          <option value="PSE">PSE (Débito Bancario)</option>
-          <option value="Bancolombia">Transferencia Bancolombia / Nequi</option>
-          <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-        </select><br />
-
-        <label for="observaciones" class="datos">Observaciones (Opcional):</label>
-        <textarea id="observaciones" rows="2" placeholder="Ej. Alergia a aceites..." style="width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box;"></textarea>
-
-        <br /><br />
-
-        <button class="boton1" type="submit" style="width: 100%; font-weight: bold;">💳 Pagar y Confirmar Reserva</button>
-      </form>
-    </section>
-
-    <aside class="posicion-whatsapp">
-      <a
-        href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
         <img
-          src="imagines/imagen_whast.png"
-          alt="Contacto vía WhatsApp"
-          class="whatsapp-imagen"
+          src="imagines/exfoliaciòn corporal.1.jpg"
+          alt="Exfoliación Corporal"
         />
-      </a>
-    </aside>
-
-    <script src="java.js"></script>
-
-    <footer>
-      <p><strong>OasisSpa</strong></p>
-      <p>Dirección: Calle 25#17a8</p>
-      <p>Teléfono: 1111111</p>
-      <p>Correo: contacto@oasisspa.com</p>
-      <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
-    </footer>
-  </body>
-</html>>
-        Nuestra empresa esta orientada para las personas que quieren tener un
-        momento de tranquila y salir de su zona de confort dandoles un plus de
-        relajacion y desconectarse con el mundo,Adicional ofrecemos diferentes
-        planes familiar,parejas,amigos.etc
-      </p>
-    </section>
-
-    <section class="servicios">
-      <div class="card">
-        <img src="imagines/aroma terapia.1.jpg" alt="Aromaterapia" />
-        <h3>Aromaterapia</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/limpieza facial.1.jpg" alt="Limpieza Facial" />
-        <h3>Limpieza Facial</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="Exfoliación Corporal" />
         <h3>Exfoliación Corporal</h3>
       </div>
 
@@ -217,52 +74,154 @@
       <h2>Reserva tu experiencia</h2>
 
       <form id="form-checkout">
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4A154B; font-size: 1rem;">1. Agendar Servicios</h3>
-        
-        <label for="select-servicio" class="datos">Selecciona un servicio:</label>
-        <select id="select-servicio" style="width: 100%; padding: 6px; margin-bottom: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        <h3
+          style="
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4a154b;
+            font-size: 1rem;
+          "
+        >
+          1. Agendar Servicios
+        </h3>
+
+        <label for="select-servicio" class="datos"
+          >Selecciona un servicio:</label
+        >
+        <select
+          id="select-servicio"
+          style="
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          "
+        >
           <option value="Aromaterapia|50000">Aromaterapia - $50.000</option>
-          <option value="Limpieza Facial|70000">Limpieza Facial - $70.000</option>
-          <option value="Exfoliación Corporal|60000">Exfoliación Corporal - $60.000</option>
-          <option value="Masaje Relajante|80000">Masaje Relajante - $80.000</option>
+          <option value="Limpieza Facial|70000">
+            Limpieza Facial - $70.000
+          </option>
+          <option value="Exfoliación Corporal|60000">
+            Exfoliación Corporal - $60.000
+          </option>
+          <option value="Masaje Relajante|80000">
+            Masaje Relajante - $80.000
+          </option>
           <option value="Hidromasaje|90000">Hidromasaje - $90.000</option>
-          <option value="Piedras Calientes|85000">Piedras Calientes - $85.000</option>
+          <option value="Piedras Calientes|85000">
+            Piedras Calientes - $85.000
+          </option>
         </select>
 
-        <button type="button" id="btn-agregar-servicio" class="boton1" style="width: 100%; margin-bottom: 10px;">
+        <button
+          type="button"
+          id="btn-agregar-servicio"
+          class="boton1"
+          style="width: 100%; margin-bottom: 10px"
+        >
           ➕ Añadir al Carrito
         </button>
 
-        <div style="border-top: 1px dashed #ccc; padding-top: 8px; margin-bottom: 15px;">
-          <h4 style="margin: 0; font-size: 0.9rem;">Tu Carrito:</h4>
-          <ul id="lista-carrito" style="list-style: none; padding: 0; margin: 8px 0; font-size: 0.85rem;"></ul>
-          <p style="font-weight: bold; font-size: 0.9rem; text-align: right; margin: 0;">
-            Total: <span id="total-pagar" style="color: #6B46C1;">$0</span>
+        <div
+          style="
+            border-top: 1px dashed #ccc;
+            padding-top: 8px;
+            margin-bottom: 15px;
+          "
+        >
+          <h4 style="margin: 0; font-size: 0.9rem">Tu Carrito:</h4>
+          <ul
+            id="lista-carrito"
+            style="
+              list-style: none;
+              padding: 0;
+              margin: 8px 0;
+              font-size: 0.85rem;
+            "
+          ></ul>
+          <p
+            style="
+              font-weight: bold;
+              font-size: 0.9rem;
+              text-align: right;
+              margin: 0;
+            "
+          >
+            Total: <span id="total-pagar" style="color: #6b46c1">$0</span>
           </p>
         </div>
 
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4A154B; font-size: 1rem;">2. Datos de Contacto y Pago</h3>
+        <h3
+          style="
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4a154b;
+            font-size: 1rem;
+          "
+        >
+          2. Datos de Contacto y Pago
+        </h3>
 
         <label for="cliente-nombre" class="datos">Nombre completo:</label>
-        <input type="text" id="cliente-nombre" required placeholder="Ej. Ana María Pérez" /><br />
+        <input
+          type="text"
+          id="cliente-nombre"
+          required
+          placeholder="Ej. Ana María Pérez"
+        /><br />
 
         <label for="cliente-telefono" class="datos">Teléfono / WhatsApp:</label>
-        <input type="tel" id="cliente-telefono" required placeholder="Ej. 3001234567" /><br />
+        <input
+          type="tel"
+          id="cliente-telefono"
+          required
+          placeholder="Ej. 3001234567"
+        /><br />
 
         <label for="metodo-pago" class="datos">Método de Pago:</label>
-        <select id="metodo-pago" required style="width: 100%; padding: 6px; margin-bottom: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        <select
+          id="metodo-pago"
+          required
+          style="
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          "
+        >
           <option value="">-- Seleccionar --</option>
           <option value="PSE">PSE (Débito Bancario)</option>
           <option value="Bancolombia">Transferencia Bancolombia / Nequi</option>
-          <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-        </select><br />
+          <option value="Tarjeta de Crédito">Tarjeta de Crédito</option></select
+        ><br />
 
-        <label for="observaciones" class="datos">Observaciones (Opcional):</label>
-        <textarea id="observaciones" rows="2" placeholder="Ej. Alergia a aceites..." style="width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box;"></textarea>
+        <label for="observaciones" class="datos"
+          >Observaciones (Opcional):</label
+        >
+        <textarea
+          id="observaciones"
+          rows="2"
+          placeholder="Ej. Alergia a aceites..."
+          style="
+            width: 100%;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+          "
+        ></textarea>
 
         <br /><br />
 
-        <button class="boton1" type="submit" style="width: 100%; font-weight: bold;">💳 Pagar y Confirmar Reserva</button>
+        <button
+          class="boton1"
+          type="submit"
+          style="width: 100%; font-weight: bold"
+        >
+          💳 Pagar y Confirmar Reserva
+        </button>
       </form>
     </section>
 
