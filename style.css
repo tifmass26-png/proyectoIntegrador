@@ -721,7 +721,11 @@ body.fondo-servicio {
 
 /* Fondo para Nosotros */
 body.fondo-nosotros {
-    background-image: url('/Imagenes_De_Fondo/masaje\ de\ loto.png');
+    background-image: url('/Imagenes_De_Fondo/masaje\ de\ loto.png'); /* o 'masaje de loto.png' */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Fondo para Contacto (Tu imagen del masaje) */
@@ -743,4 +747,62 @@ body.fondo-contacto {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Eliminar los fondos sólidos de las secciones para dar paso a contenedores semitransparentes */
+
+.portadaNosotros,
+.historiaNosotros,
+.misionVision,
+.valoresNosotros {
+    background-color: transparent; /* Quita el color sólido que tapa la foto */
+    padding: 30px 20px;
+}
+
+/*  tarjetas translúcidas para que el contenido sea legible sobre el fondo */
+.portadaNosotros,
+.historiaNosotros article,
+.misionVision article,
+.valoresNosotros article {
+    background-color: rgba(255, 255, 255, 0.88); /* Fondo blanco con 88% de opacidad */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px); /* EFECTO CRISTAL: Suaviza la foto detrás del texto */
+}
+
+/* Distribución y márgenes del contenedor principal de Nosotros */
+.contenedor-nosotros {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Ajuste de flexbox para la historia y misión/visión */
+.historiaNosotros, .misionVision {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.historiaNosotros article, .misionVision article {
+    flex: 1;
+    padding: 30px;
+}
+
+.valoresNosotros {
+    text-align: center;
+}
+
+.contenedor-tarjetas-valores {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.valoresNosotros article {
+    flex: 1;
+    padding: 20px;
 }

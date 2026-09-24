@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros</title>
+    <title>Nosotros - OasisSpa</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="mifondo body-foto fondo-nosotros">
+  <!-- Retiramos 'mifondo' para evitar que sobrescriba la imagen de fondo -->
+  <body class="body-foto fondo-nosotros">
+    
     <header class="menuApp">
       <h1>OasisSpa</h1>
       <nav class="menu">
@@ -18,127 +20,87 @@
       <img class="logo" src="/imagines/spaversion2.png" alt="Logo OasisSpa" />
     </header>
 
+    <main class="contenedor-nosotros">
+      
+      <!-- BANNER HERO -->
       <section class="banner-hero hero-nosotros">
-  <div class="banner-overlay">
-    <h2>Ponte en Contacto</h2>
-    <p>Estamos listos para agendar tu espacio de bienestar</p>
-  </div>
-</section>
-
-  
-      <section class="portadaNosotros">
-        <h2>Nosotros</h2>
-
-        <p class="">
-          Conoce más sobre OasisSpa y nuestro compromiso con el bienestar y la
-          tranquilidad.
-        </p>
+        <div class="banner-overlay">
+          <h2>Sobre Nosotros</h2>
+          <p>Estamos comprometidos con tu bienestar y tranquilidad</p>
+        </div>
       </section>
 
+      <!-- SECCIÓN PORTADA NOSOTROS -->
+      <section class="portadaNosotros">
+        <h2>Nosotros</h2>
+        <p>Conoce más sobre OasisSpa y nuestro compromiso con el bienestar.</p>
+      </section>
+
+      <!-- SECCIÓN HISTORIA -->
       <section class="historiaNosotros">
         <article>
           <h2>¿Quiénes somos?</h2>
-
-          <p>
-            OasisSpa es un espacio creado para brindar momentos de tranquilidad,
-            bienestar y relajación.
-          </p>
-
-          <p>
-            Nuestro objetivo es ofrecer a nuestros clientes una experiencia
-            agradable, en un ambiente cómodo y tranquilo.
-          </p>
-
-          <p>
-            Trabajamos para brindar una atención amable y servicios pensados
-            para el bienestar.
-          </p>
+          <p>OasisSpa es un espacio creado para brindar momentos de tranquilidad, bienestar y relajación.</p>
+          <p>Nuestro objetivo es ofrecer a nuestros clientes una experiencia agradable en un ambiente cómodo.</p>
         </article>
 
         <article class="historiaTiempo">
           <h2>Nuestra historia</h2>
-
           <ul>
-            <li>
-              <strong>2024</strong>
-              <p>Nace la idea de crear OasisSpa.</p>
-            </li>
-
-            <li>
-              <strong>2025</strong>
-              <p>Comenzamos a organizar nuestros servicios.</p>
-            </li>
-
-            <li>
-              <strong>Hoy</strong>
-              <p>Seguimos trabajando para ofrecer bienestar y tranquilidad.</p>
-            </li>
+            <li><strong>2024:</strong> Nace la idea de crear OasisSpa.</li>
+            <li><strong>2025:</strong> Comenzamos a organizar nuestros servicios.</li>
+            <li><strong>Hoy:</strong> Seguimos trabajando para ofrecer bienestar y tranquilidad.</li>
           </ul>
         </article>
       </section>
 
+      <!-- SECCIÓN MISIÓN Y VISIÓN -->
       <section class="misionVision">
         <article>
           <h2>Misión</h2>
-
-          <p>
-            Brindar servicios de bienestar y relajación en un ambiente cómodo y
-            agradable, ofreciendo una atención de calidad a nuestros clientes.
-          </p>
+          <p>Brindar servicios de bienestar y relajación en un ambiente cómodo y agradable, ofreciendo una atención de calidad.</p>
         </article>
 
         <article>
           <h2>Visión</h2>
-
-          <p>
-            Ser un espacio reconocido por brindar experiencias de relajación y
-            bienestar, buscando mejorar cada día nuestros servicios.
-          </p>
+          <p>Ser un espacio reconocido por brindar experiencias de relajación y bienestar, buscando mejorar cada día.</p>
         </article>
       </section>
 
+      <!-- SECCIÓN VALORES -->
       <section class="valoresNosotros">
         <h2>Nuestros valores</h2>
-
-        <article>
-          <h3>Compromiso</h3>
-
-          <p>Nos comprometemos con el bienestar de nuestros clientes.</p>
-        </article>
-
-        <article>
-          <h3>Calidad</h3>
-
-          <p>Buscamos ofrecer servicios de buena calidad.</p>
-        </article>
-
-        <article>
-          <h3>Respeto</h3>
-
-          <p>Tratamos a cada cliente con respeto y amabilidad.</p>
-        </article>
+        <div class="contenedor-tarjetas-valores">
+          <article>
+            <h3>Compromiso</h3>
+            <p>Nos comprometemos con el bienestar de nuestros clientes.</p>
+          </article>
+          <article>
+            <h3>Calidad</h3>
+            <p>Buscamos ofrecer servicios de buena calidad.</p>
+          </article>
+          <article>
+            <h3>Respeto</h3>
+            <p>Tratamos a cada cliente con respeto y amabilidad.</p>
+          </article>
+        </div>
       </section>
+
     </main>
 
+    <!-- BOTÓN WHATSAPP -->
     <aside class="posicion-whatsapp">
-      <a
-        href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/imagines/imagen_whast.png"
-          alt="Contacto vía WhatsApp"
-          class="whatsapp-imagen"
-        />
+      <a href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion" target="_blank" rel="noopener noreferrer">
+        <img src="/imagines/imagen_whast.png" alt="Contacto vía WhatsApp" class="whatsapp-imagen" />
       </a>
     </aside>
+
+    <!-- PIE DE PÁGINA -->
     <footer>
       <p><strong>OasisSpa</strong></p>
-      <p>Dirección: Calle 25#17a8</p>
-      <p>Teléfono: 1111111</p>
-      <p>Correo: contacto@oasisspa.com</p>
+      <p>Dirección: Calle 25 #17a-8 | Teléfono: 1111111 | Correo: contacto@oasisspa.com</p>
       <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
     </footer>
+
   </body>
 </html>
