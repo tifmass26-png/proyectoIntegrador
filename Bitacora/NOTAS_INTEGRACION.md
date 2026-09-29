@@ -43,3 +43,11 @@ Para garantizar la estabilidad del proyecto y no perder el trabajo de diseño de
 
 ## 4. Conclusión
 La decisión de **no hacer merge automático** previno la corrupción del maquetado visual y garantizó que la funcionalidad del carrito/pago opere perfectamente sobre el diseño estético definitivo.
+
+
+
+Se programa integracion de ramas para el dis viernes 2 de octubre ya debemos esperar que todas las ramas esten creadas y sin errores de logica para unificarlas y poder hacerlo en el proyecto integrador, cabe aclarar que solo vamos a traer los cambios de java con su extencion sin tocar el codigo de html.
+
+### CONCLUCION
+
+Se espera la reunion el dia jueves para validar los cambios que si esten guardados en cada rama y poder hacer la unificacion y cambios del proyecto 
