@@ -174,8 +174,16 @@ class Service {
         selectAll(){console.log("Selecting all reservations");}
         update(){console.log("Updating reservation");}
         deleteById(id){console.log("Deleting reservation with id" + id);}   
-    }
 
+    
+    }
+//creamos un objeto congelado para los metodos de pago
+    const PaymentMethod = Object.freeze({
+        CASH: "cash",
+        BANK_TRANSFER: "bank_transfer",
+        CREDIT_CARD: "credit_card"
+        DEBIT_CARD: "debit_card",
+    });
 
     class Payment {
         #id;
