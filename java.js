@@ -1,7 +1,5 @@
-
 // ==========================================
-// CONTROLADOR DE INTERFAZ (UI)
-//  app.js
+// CONTROLADOR DE INTERFAZ (UI) - OasisSpa
 // ==========================================
 
 class AppSpa {
@@ -35,23 +33,26 @@ class AppSpa {
       return;
     }
 
-    const valorSelect = this.selectServicio.value;
-    if (!valorSelect) return;
+    if (!this.selectServicio || !this.selectServicio.value) {
+      alert('Por favor, selecciona un servicio del menú.');
+      return;
+    }
 
+    const valorSelect = this.selectServicio.value;
     const [nombre, precioStr] = valorSelect.split('|');
     const precio = parseFloat(precioStr);
 
-    // Instancia de Service usando la clase del Integrante 1 (models.js)
+    // Instancia de Service usando la clase definida en models.js
     const nuevoServicio = new Service(
       Date.now(),
-      nombre,
-      `Servicio de relajación: ${nombre}`,
-      "imagines/spaversion2.png",
-      60,
-      "Disponible"
+      nombre, // description
+      `Servicio de relajación: ${nombre}`, // benefit
+      "imagenes/spaversion2.png", // photo (corregido "imagines" a "imagenes")
+      60, // duration
+      "Disponible" // status
     );
 
-    // Guardamos el precio como aux para cálculo
+    // Variable auxiliar para el precio
     nuevoServicio.precioAux = precio;
 
     this.carritoServicios.push(nuevoServicio);
@@ -76,11 +77,12 @@ class AppSpa {
       li.style.display = 'flex';
       li.style.justifyContent = 'space-between';
       li.style.alignItems = 'center';
-      li.style.margin = '4px 0';
+      li.style.margin = '6px 0';
+      li.style.fontSize = '14px';
 
       li.innerHTML = `
         <span>${servicio.description} - $${servicio.precioAux.toLocaleString('es-CO')}</span>
-        <button type="button" class="btn-eliminar-item" data-index="${index}" style="background:none; border:none; color:red; cursor:pointer;">❌</button>
+        <button type="button" class="btn-eliminar-item" data-index="${index}" style="background:none; border:none; color:red; cursor:pointer; font-weight:bold;">❌</button>
       `;
 
       this.listaCarrito.appendChild(li);
@@ -90,10 +92,11 @@ class AppSpa {
       this.totalPagar.textContent = `$${totalAcumulado.toLocaleString('es-CO')}`;
     }
 
+    // Asignación de eventos a los botones de eliminar
     const botonesEliminar = this.listaCarrito.querySelectorAll('.btn-eliminar-item');
     botonesEliminar.forEach((btn) => {
       btn.addEventListener('click', (e) => {
-        const index = e.target.getAttribute('data-index');
+        const index = e.currentTarget.getAttribute('data-index');
         this.eliminarServicio(index);
       });
     });
@@ -112,7 +115,7 @@ class AppSpa {
     const metodoPagoStr = document.getElementById('metodo-pago').value;
     const observaciones = document.getElementById('observaciones').value.trim();
 
-    // 1. Crear Instancia Customer (Hereda de Person)
+    // 1. Instancia Customer (Hereda de Person)
     const cliente = new Customer(
       Date.now(),
       nombre,
@@ -122,7 +125,7 @@ class AppSpa {
       "Medellín, Colombia"
     );
 
-    // 2. Calcular Total y Crear Instancia Payment
+    // 2. Cálculo de Total e Instancia Payment
     const totalCalculado = this.carritoServicios.reduce((acc, s) => acc + s.precioAux, 0);
     const pago = new Payment(
       'PAG-' + Date.now(),
@@ -132,7 +135,7 @@ class AppSpa {
       "COMPLETADO"
     );
 
-    // 3. Crear Instancia Reservation
+    // 3. Instancia Reservation
     const nuevaReserva = new Reservation(
       'RES-' + Date.now(),
       new Date().toLocaleDateString('es-CO'),
@@ -160,7 +163,7 @@ class AppSpa {
       observaciones: nuevaReserva.notes
     };
 
-    // 4. Guardar en LocalStorage
+    // 4. Guardar en LocalStorage usando GestorAlmacenamiento
     GestorAlmacenamiento.guardarReserva(registroCompleto);
 
     alert(`¡Reserva confirmada con éxito!\nCódigo: ${nuevaReserva.id}\nCliente: ${cliente.name}\nTotal: $${totalCalculado.toLocaleString('es-CO')}`);
@@ -172,7 +175,7 @@ class AppSpa {
   }
 }
 
-// Inicializar la aplicación cuando este listo
+// Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   new AppSpa();
 });
