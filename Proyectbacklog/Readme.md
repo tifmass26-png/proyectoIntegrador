@@ -50,8 +50,9 @@
 
 | Épica | Features | Historias de usuario |
 | :--- | :---: | :---: |
-| 1. Reservas de servicios | 4 | 7 |
-| 2. Métodos de pago | 5 | 8 |
-| **TOTAL** | **9** | **15** |
+| 1. Reservas de servicios | 2 | 7 |
+| 2. Métodos de pago      | 3,7| 8 |
+| **TOTAL** | **6** | **15** |
 
 > **Nota:** La estructura queda organizada de forma jerárquica: *Épica → Feature → Historia de Usuario*. Así, cada historia de usuario queda ubicada debajo del Feature al que pertenece. La redacción se mantiene sencilla y apropiada para un proyecto de nivel 2.
+
