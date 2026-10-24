@@ -1,3 +1,12 @@
+//importaciones de clases
+
+import Service from "./Service.js";
+import Customer from "./Customer.js";
+import Payment from "./Payment.js";
+import Reservation from "./Reservation.js";
+import GestorAlmacenamiento from "./Datos.js";
+
+
 // ==========================================
 // CONTROLADOR DE INTERFAZ (UI) - OasisSpa
 // ==========================================
@@ -42,7 +51,7 @@ class AppSpa {
     const [nombre, precioStr] = valorSelect.split('|');
     const precio = parseFloat(precioStr);
 
-    // Instancia de Service usando la clase definida en models.js
+    // Instancia de Service usando la clase definida en 
     const nuevoServicio = new Service(
       Date.now(),
       nombre, // description
