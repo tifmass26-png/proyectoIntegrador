@@ -400,12 +400,12 @@ footer p {
         display: block;
     }
 
-    /* --- AJUSTES  --- */
+    /* --- AJUSTES CARRUSELES Y CRONÓMETRO NUEVO --- */
     
-    /* 1. Achicamos el reloj para que no se salga de la pantalla */
-    .reloj-gigante {
-        font-size: 2em; 
-        padding: 10px 20px;
+    /* 1. Achicamos el reloj tipo pastilla para que no se salga de la pantalla */
+    .cronometro {
+        font-size: 1.8em; 
+        padding: 8px 15px;
     }
     
     .contenedor-cronometro h3 {
@@ -417,9 +417,9 @@ footer p {
         margin-bottom: 15px;
     }
 
-    /* 2. Reducimos el tamaño de la letra del carrusel de inicio */
+    /* 2. Reducimos el tamaño de la letra del carrusel suave de inicio */
     .pista-texto-inicio p {
-        font-size: 1.1em; 
+        font-size: 0.95em; 
     }
 
     /* 3. Ajustamos la altura de las fotos en la página de Servicios para que no se estiren feo */
@@ -598,36 +598,38 @@ footer p {
 
 
 /* ==========================================================================
-   13. BANNER PROMOCIONAL INICIO (GRANDE Y EN MOVIMIENTO)
+   13. BANNER PROMOCIONAL INICIO (FONDO SUAVE)
    ========================================================================== */
 
 .banner-promocional-inicio {
     margin: 40px auto;
     width: 90%;
-    max-width: 1000px; /* Un poco más ancho para que luzca imponente */
+    max-width: 900px;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco puro y suave */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra elegante */
+    overflow: hidden; /* Mantiene los bordes redondeados limpios */
 }
 
-/* El Carrusel Gigante */
+/* El Carrusel ahora es sutil */
 .carrusel-horizontal-inicio {
-    background-color: #8a2be2; /* Púrpura vibrante que llama a la acción */
-    color: white;
-    padding: 18px 0;
-    overflow: hidden;
-    border-radius: 15px 15px 0 0; /* Solo redondea las esquinas de arriba */
+    background-color: rgba(230, 198, 223, 0.4); /* Rosado/Lila muy suave */
+    color: #4a154b; /* Texto oscuro para contrastar sin ser agresivo */
+    padding: 12px 0;
     display: flex;
     white-space: nowrap;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.15); /* Línea divisoria muy fina */
 }
 
 .pista-texto-inicio {
     display: flex;
-    /* 35 segundos para que pase a una velocidad legible al ser texto grande */
     animation: moverTextoInicio 35s linear infinite; 
 }
 
 .pista-texto-inicio p {
     margin: 0;
-    font-size: 1.4em; /* Texto mucho más grande */
+    font-size: 1.1em; 
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -639,53 +641,50 @@ footer p {
 
 
 /* ==========================================================================
-   14. CRONÓMETRO DESTACADO (EFECTO NEÓN)
+   14. CRONÓMETRO DESTACADO (DISEÑO PASTILLA ELEGANTE)
    ========================================================================== */
 
 .contenedor-cronometro {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px 20px;
-    border-radius: 0 0 15px 15px; /* Redondea las esquinas de abajo */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border: 2px solid #8a2be2;
-    border-top: none; /* Se fusiona visualmente con el carrusel de arriba */
+    padding: 35px 20px;
 }
 
 .contenedor-cronometro h3 {
     color: #4a154b;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 5px;
 }
 
 .etiqueta-reloj {
     color: #666;
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    font-weight: 500;
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
-/* Diseño del reloj digital */
-.reloj-gigante {
+/* El fondo degradado que envuelve los números */
+.marco-reloj {
     display: inline-block;
-    font-size: 3.5em; /* ¡Números masivos! */
-    font-weight: bold;
-    font-family: monospace; /* Tipografía de reloj digital */
-    color: #ffffff;
-    background: linear-gradient(135deg, #7b1fa2, #4a154b); /* Degradado fino */
-    padding: 15px 40px;
+    background: linear-gradient(135deg, #7b1fa2, #4a154b);
+    padding: 8px;
     border-radius: 12px;
-    /* Efecto de resplandor que palpita */
+    box-shadow: 0 6px 15px rgba(123, 31, 162, 0.25);
     animation: latidoReloj 2s infinite alternate;
 }
 
+/* Los números del reloj */
+.cronometro {
+    display: block;
+    font-size: 3em; 
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.15); /* Oscurece un poco el fondo detrás de los números */
+    padding: 10px 25px;
+    border-radius: 8px;
+    letter-spacing: 3px;
+}
+
 @keyframes latidoReloj {
-    from { 
-        box-shadow: 0 0 10px rgba(123, 31, 162, 0.4); 
-        transform: scale(1); 
-    }
-    to { 
-        box-shadow: 0 0 30px rgba(123, 31, 162, 0.8); 
-        transform: scale(1.03); /* Crece un poquitico para generar urgencia */
-    }
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
 }
