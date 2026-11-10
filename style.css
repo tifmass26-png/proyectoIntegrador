@@ -1,57 +1,66 @@
-/* ESTILOS GENERALES Y ENCABEZADO*/
+/* ==========================================================================
+   1. ESTILOS GENERALES Y CONFIGURACIÓN DEL BODY
+   ========================================================================== */
 
 body {
     margin: 0;
-    padding-top: 90px; /* Reducido para eliminar el espacio vacío superior */
+    padding-top: 90px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.mifondo {
     background-color: #e6c6df;
+    min-height: 100vh;
 }
 
+/* Fondos fijos por página (Efecto Parallax sutil) */
+.body-foto {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.fondo-inicio { background-image: url('Imagenes_De_Fondo/decoracion\ de\ relax.png'); }
+body.fondo-servicio { background-image: url('Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png'); }
+body.fondo-nosotros { background-image: url('Imagenes_De_Fondo/masaje\ de\ loto.png'); }
+body.fondo-contacto { background-image: url('Imagenes_De_Fondo/serivico\ de\ tranquilidad.png'); }
+
+/* Contenedor central (Uso general) */
+.contenedor-principal {
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Títulos y Párrafos base */
 h1 {
     color: rgb(161, 133, 162);
-    block-size: 15px;
 }
 
-#parrafo {
-    font-size: 20px;
-    line-height: 1.5;
+.descripcion {
+    background-color: rgba(247, 196, 206, 0.65); 
+    width: 100%;                          
+    padding: 20px 40px;                    
+    text-align: center;                    
+    box-sizing: border-box;                 
 }
 
-.bienvenida {
-    text-align: center;
-    padding: 40px;
+.descripcion p {
+    margin: 0;                             
+    color: #333333;                        
+    font-size: 1rem;                       
+    line-height: 1.5;                      
+    font-weight: 500;
 }
 
-.bienvenida h2 {
-    font-size: 40px;
-    color: #7b1fa2;
-    animation: aparecer 2s ease;
-}
 
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.pmensajedenostros {
-    color: #331885;
-}
-
-/*POSICIONAMIENTO Y NAVEGACIÓN */
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN (MENÚ PRINCIPAL Y SUBMENÚ)
+   ========================================================================== */
 
 .menuApp {
     background-color: #d8def5;
     display: flex;
-    justify-content: space-between; /* Distribuye OasisSpa a la izquierda y el menú al centro */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
     position: fixed;
@@ -64,84 +73,147 @@ h1 {
 }
 
 .menuApp h1 {
-    position: static; /* Quita el posicionamiento absoluto que causaba solapamiento */
     color: purple;
     font-size: 40px;
     margin: 0;
 }
 
-.menu {
-    display: flex;
-    gap: 25px;
-    margin: 0;
-}
-
-.menu a {
-    text-decoration: none;
-    color: blue;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.menu a:hover {
-    background-color: #c7a7ff;
-}
-
 .logo {
-    position: static; /* Mantiene el logo en su lugar sin salirse */
     width: 65px;
     height: 65px;
     border-radius: 50%;
 }
-/* POSICIONAMIENTO DE ELEMENTOS 
-.position-fixed-oasis {
-    text-align: center;
-    font-size: 70px;
-    color: purple;
+
+/* Menú Principal */
+.menu-principal {
+    display: flex;
+    gap: 25px;
     margin: 0;
-    padding-top: 20px;
+    padding: 0;
+    list-style: none;
+    align-items: center;
 }
 
-.position-sticky-inicio {
+.menu-principal > li > a {
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-principal > li > a:hover {
+    background-color: #c7a7ff;
+}
+
+/* Submenú Desplegable (Nivel 2) */
+.item-desplegable {
+    position: relative; /* Clave para posicionar el submenú debajo */
+}
+
+.submenu {
+    display: none; 
     position: absolute;
-    left: 420px;
-    top: 4cap;
-    right: 100px;
+    top: 100%;
+    left: 0;
+    background-color: #d8def5;
+    list-style: none;
+    padding: 15px;
+    min-width: 220px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin: 0;
+    z-index: 1001;
 }
 
-.position-sticky-servicio {
-    position: absolute;
-    left: 490px;
-    top: 4cap;
-    right: 200px;
+/* Muestra el submenú al pasar el ratón */
+.item-desplegable:hover .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.position-sticky-contacto {
-    position: absolute;
-    left: 680px;
-    top: 4cap;
-    right: 75px;
+.submenu a {
+    text-decoration: none;
+    color: #4b0082;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s;
 }
 
-.position-sticky-nosotros {
-    position: absolute;
-    left: 580px;
-    top: 4cap;
-    right: 65px;
-}
-*/
-.position-relative-cuadro-grande-1 {
-    position: relative;
-    left: 50px;
-    bottom: 100px;
+.submenu a:hover {
+    color: #8a2be2; 
 }
 
-.position-sticky {
-    position: sticky;
-    top: 0px;
+
+/* ==========================================================================
+   4. FORMULARIO DE RESERVA (COMPAÑERO)
+   ========================================================================== */
+
+.formulario {
+    width: 400px;
+    margin: 50px auto;
+    background-color: rgba(249, 239, 239, 0.95);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* BOTÓN FLOTANTE DE WHATSAPP */
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8b68b5;
+}
+
+.formulario label.datos {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+}
+
+.formulario input, 
+.formulario textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: #8a2be2;
+}
+
+.boton1 {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton1:hover {
+    background-color: #6a1b9a;
+}
+
+
+/* ==========================================================================
+   5. BOTÓN FLOTANTE DE WHATSAPP
+   ========================================================================== */
 
 .posicion-whatsapp {
     position: fixed;
@@ -171,115 +243,76 @@ h1 {
     100% { transform: scale(1); }
 }
 
-/*COMPONENTES Y TARJETAS */
 
-.cajamediana {
-    background-color: azure;
-    text-shadow: 15px;
-    width: 100px;
-    height: 30px;
-    border-radius: 8px;
-    box-shadow: 12px;
-    font-style: oblique;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5px;
+/* ==========================================================================
+   6. PÁGINA: NOSOTROS (ESTILOS CON EFECTO CRISTAL)
+   ========================================================================== */
+
+.contenedor-nosotros {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.cajacentral-1 {
-    background-color: azure;
-    text-shadow: 15px;
-    width: 200px;
-    height: 150px;
-    border-radius: 8px;
-    box-shadow: 15px;
-    font-style: oblique;
-    font-family: Arial, Helvetica, sans-serif;
+.portadaNosotros,
+.historiaNosotros,
+.misionVision,
+.valoresNosotros {
+    background-color: transparent; 
+    padding: 30px 20px;
+}
+
+/* Tarjetas Translúcidas (Efecto Cristal) */
+.portadaNosotros,
+.historiaNosotros article,
+.misionVision article,
+.valoresNosotros article {
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px); 
+}
+
+.portadaNosotros h2 {
+    color: #7020a0;
+    font-size: 40px;
     margin: 10px;
 }
 
-.servicios {
+.historiaNosotros, .misionVision {
     display: flex;
+    gap: 30px;
     justify-content: center;
-    align-items: flex-start;
-    gap: 25px;
-    flex-wrap: wrap;
-    padding: 40px;
 }
 
-.card {
-    transition: 0.4s;
-    background-color: white;
-    width: 320px;
-    flex: 0 0 320px;
-    border-radius: 20px;
-    overflow: hidden;
-    text-align: center;
+.historiaNosotros article, .misionVision article {
+    flex: 1;
+    padding: 30px;
 }
 
-.card summary { 
-    list-style: none;
-    cursor: pointer;
+.historiaNosotros h2, .misionVision h2, .valoresNosotros h2 {
+    color: #5b168b;
 }
 
-.contenedor-card {
-    width: 320px;
-    flex: 0 0 320px;
+.contenedor-tarjetas-valores {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.informacion {
+.valoresNosotros article {
+    flex: 1;
     padding: 20px;
-    background-color: white;
 }
 
-.informacion video {
-    width: 100%;
-    border-radius: 15px;
-}
 
-.informacion iframe {
-    width: 100%;
-    height: 180px;
-    border-radius: 15px;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
-    transition: 0.5s;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.card:hover img {
-    transform: scale(1.08);
-}
-
-.card h3 {
-    color: #7b4fa3;
-    padding: 15px;
-    margin-top: 15px;
-}
-
-.descripcion {
-  background-color: rgba(247, 196, 206, 0.65); 
-  width: 100%;                          
-  padding: 20px 40px;                    
-  text-align: center;                    
-  box-sizing: border-box;                 
-}
-
-.descripcion p {
-  margin: 0;                             
-  color: #333333;                        
-  font-size: 1rem;                       
-  line-height: 1.5;                      
-  font-weight: 500;
-}
-
-/* SECCIÓN DE CONTACTO */
+/* ==========================================================================
+   7. PÁGINA: CONTACTO
+   ========================================================================== */
 
 .contenedor-contacto {
     max-width: 1100px;
@@ -296,226 +329,19 @@ h1 {
 }
 
 .tarjeta-info, 
-.tarjeta-formulario {
-    background-color: rgba(255, 255, 255, 0.85);
+.tarjeta-formulario,
+.tarjeta-lateral {
+    background-color: rgba(255, 255, 255, 0.9) !important;
     border-radius: 12px;
     padding: 25px;
     flex: 1 1 420px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.tarjeta-info h3, 
-.tarjeta-formulario h3 {
-    margin-bottom: 15px;
-    color: #4a154b;
-}
 
-.datos-contacto {
-    font-style: normal;
-    line-height: 1.6;
-}
-
-.dato-item {
-    margin-bottom: 12px;
-    color: #444;
-}
-
-.dato-item strong {
-    color: #222;
-}
-
-.contenedor-mapa {
-    margin-top: 15px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.formulario {
-    width: 400px;
-    margin: 50px auto;
-    background-color: rgb(249, 239, 239);
-    padding: 25px;
-    border-radius: 20px;
-}
-
-.formulario h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #8b68b5;
-}
-
-.formulario .campo {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario label {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    color: #333;
-    font-weight: bold;
-}
-
-.formulario input, 
-.formulario textarea,
-form select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-family: inherit;
-    box-sizing: border-box;
-}
-
-.formulario input:focus, 
-.formulario textarea:focus {
-    outline: none;
-    border-color: #8a2be2;
-}
-
-.btn-enviar {
-    background-color: #8a2be2;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.btn-enviar:hover {
-    background-color: #6a1b9a;
-}
-
-.distribucion-contacto {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.tarjeta-lateral {
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 12px;
-    padding: 20px;
-    flex: 1 1 250px;
-    max-width: 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.tarjeta-lateral h3 {
-    color: #4a154b;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.tarjeta-lateral details {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.resaltado {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    color: #444;
-}
-
-/*  SECCIÓN NOSOTROS Y PIE DE PÁGINA (FOOTER) */
-
-.portadaNosotros {
-    background-color: #d9c9e8;
-    text-align: center;
-    padding: 45px 20px;
-    animation: aparecer 1.5s ease;
-}
-
-.portadaNosotros h2 {
-    color: #7020a0;
-    font-size: 40px;
-    margin: 10px;
-}
-
-.portadaNosotros p {
-    color: #32166b;
-}
-
-.historiaNosotros {
-    background-color: #f2b7c7;
-    padding: 50px;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-}
-
-.historiaNosotros article {
-    width: 45%;
-}
-
-.historiaNosotros h2 {
-    color: #5b168b;
-}
-
-.historiaNosotros p {
-    line-height: 1.5;
-}
-
-.historiaTiempo li {
-    margin-bottom: 20px;
-}
-
-.misionVision {
-    background-color: #d8d9f0;
-    padding: 50px;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-}
-
-.misionVision article {
-    background-color: white;
-    width: 40%;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px #999;
-}
-
-.misionVision h2 {
-    color: #5b168b;
-}
-
-.valoresNosotros {
-    background-color: #f7e3ef;
-    padding: 50px;
-    text-align: center;
-}
-
-.valoresNosotros h2 {
-    color: #5b168b;
-}
-
-.valoresNosotros article {
-    display: inline-block;
-    vertical-align: top;
-    width: 25%;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #c8b8df;
-    border-radius: 8px;
-    background-color: white;
-}
-
-.valoresNosotros h3 {
-    color: #32166b;
-}
+/* ==========================================================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
 
 footer {
     background-color: #b5b9df;
@@ -531,288 +357,335 @@ footer p {
     margin: 10px;
 }
 
-/*  DISEÑO ADAPTATIVO */
+
+/* ==========================================================================
+   9. DISEÑO ADAPTATIVO (RESPONSIVE) MÓVILES
+   ========================================================================== */
 
 @media (max-width: 768px) {
+    /* --- Ajustes del Menú --- */
     .menuApp {
         flex-direction: column;
-        padding: 10px;
-        box-sizing: border-box;
+        padding: 15px;
+        height: auto;
     }
 
-    .menuApp h1 {
-        position: static;
-        font-size: 35px;
-        margin-bottom: 10px;
-    }
-
-    .menu {
+    .menu-principal {
         gap: 15px;
         flex-wrap: wrap;
-    }
-
-    .menu a {
-        font-size: 18px;
-    }
-
-    .logo {
-        position: static;
-        width: 70px;
-        height: auto;
+        justify-content: center;
         margin-top: 10px;
     }
 
+    .submenu {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 5px 0 0 15px;
+    }
+
     body {
-        padding-top: 180px;
+        padding-top: 150px;
     }
 
-    .descripcion {
-        padding: 20px;
-    }
-
+    /* --- Ajustes de Formularios y Tarjetas --- */
     .formulario {
         width: 90%;
     }
 
     .historiaNosotros, 
-    .misionVision {
+    .misionVision,
+    .contenedor-tarjetas-valores {
+        flex-direction: column;
         display: block;
-        padding: 30px;
     }
 
-    .historiaNosotros article, 
-    .misionVision article {
-        width: 100%;
-        margin-bottom: 20px;
+    /* --- AJUSTES  --- */
+    
+    /* 1. Achicamos el reloj para que no se salga de la pantalla */
+    .reloj-gigante {
+        font-size: 2em; 
+        padding: 10px 20px;
+    }
+    
+    .contenedor-cronometro h3 {
+        font-size: 1.4em;
     }
 
-    .valoresNosotros article {
-        display: block;
-        width: auto;
-        margin: 20px 0;
+    .etiqueta-reloj {
+        font-size: 1em;
+        margin-bottom: 15px;
     }
 
-    .contactos {
-        background-color: #f2b7c7;
-        padding: 50px;
-        display: flex;
-        gap: 40px;
-        justify-content: center;
+    /* 2. Reducimos el tamaño de la letra del carrusel de inicio */
+    .pista-texto-inicio p {
+        font-size: 1.1em; 
+    }
+
+    /* 3. Ajustamos la altura de las fotos en la página de Servicios para que no se estiren feo */
+    .carrusel-galeria {
+        height: 220px; 
+    }
+    
+    .titulo-elegante {
+        font-size: 1.8em;
     }
 }
 
-/*CONFIGURACIÓN DE ANCHO GENERAL Y CENTRADO*/
+/* ==========================================================================
+   10. CARRUSEL AUTOMÁTICO (PÁGINA SERVICIOS)
+   ========================================================================== */
 
-.contenedor-principal {
-    max-width: 1300px; /* Ajuste ideal entre 1200px y 1400px */
-    width: 90%;
-    margin: 0 auto;    /* Centra todo el contenido horizontalmente */
-    padding: 20px 0;
-    box-sizing: border-box;
+.seccion-impacto {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo claro semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 40px;
 }
 
-/* BANNER SUPERIOR  */
+.titulo-elegante {
+    color: #4b0082;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
 
-.banner-hero {
-    width: 100vw;               /* Ocupa el 100% exacto de la pantalla */
+.subtitulo-elegante {
+    color: #555;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* El marco del cuadro por donde se asoman las fotos */
+.carrusel-galeria {
+    width: 100%;
+    max-width: 900px;
+    height: 400px; /* Altura de las fotos */
+    margin: 0 auto;
+    overflow: hidden; /* Oculta lo que se sale del cuadro */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;        /* Elimina los márgenes laterales */
-    margin-right: -50vw;
-    margin-top: 0;
-    margin-bottom: 30px;
-    height: 300px;
-    background-image: url('imagines/banner-spa.jpg'); /* Tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
-.banner-overlay {
-    background-color: rgba(123, 79, 163, 0.6); /* Fondo lila semitransparente mientras carga la imagen */
+/* La pista larga que contiene todas las fotos y se mueve */
+.pista-carrusel {
+    display: flex;
+    width: 400%; /* Si tienes 4 fotos, es 400%. Ajusta según la cantidad. */
+    height: 100%;
+    /* Llamamos a la animación. Alternate hace que vaya y vuelva sola */
+    animation: moverCarrusel 20s infinite alternate ease-in-out;
+}
+
+.pista-carrusel figure {
+    width: 25%; /* 100% dividido entre 4 fotos = 25% */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.pista-carrusel img {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 0 20px;
-    box-sizing: border-box;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
 }
 
-.banner-overlay h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    color: #ffffff;
+/* La animación que desplaza la pista de izquierda a derecha */
+@keyframes moverCarrusel {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-25%); } /* Pausa en la foto 2 */
+    66% { transform: translateX(-50%); } /* Pausa en la foto 3 */
+    100% { transform: translateX(-75%); } /* Pausa en la foto 4 */
 }
 
-.banner-overlay p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #ffffff;
+.accion-sutil {
+    margin-top: 40px;
 }
 
-/* BANNER CON COLOR ORIGINAL DE LA FOTO */
-.banner-hero {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 30px;
-}
-
-/* Superposición transparente (sin tinte de color) */
-.banner-overlay {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 0 20px;
-    box-sizing: border-box;
-    /* Oscurece un 20% la imagen solo para dar contraste al texto, sin cambiar los colores */
-    background: rgba(0, 0, 0, 0.2); 
-}
-
-/* Sombra en el texto para garantizar legibilidad */
-.banner-overlay h2 {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.banner-overlay p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+.accion-sutil a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
 }
 
 
 /* ==========================================================================
-   CONFIGURACIÓN DE FONDO GENERAL PARA EL BODY
+   11. CARRUSEL DE TEXTO HORIZONTAL (PÁGINA CONTACTO)
    ========================================================================== */
 
-.body-foto {
+.carrusel-horizontal-contenedor {
+    background-color: #4a154b; /* Morado oscuro y elegante */
+    color: white;
+    padding: 12px 0;
+    overflow: hidden; /* Oculta lo que se sale del borde */
+    border-radius: 8px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    white-space: nowrap; /* Evita que el texto salte a la siguiente línea */
+}
+
+.pista-horizontal-texto {
+    display: flex;
+    /* Movimiento continuo hacia la izquierda por 25 segundos */
+    animation: moverTextoHorizontal 25s linear infinite; 
+}
+
+.pista-horizontal-texto p {
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
-/* --------------------------------------------------
-   IMÁGENES DE FONDO INDIVIDUALES POR PÁGINA
-   -------------------------------------------------- */
-
-/* Fondo para Inicio */
-body.fondo-inicio {
-    background-image: url('Imagenes_De_Fondo/decoracion\ de\ relax.png');
+@keyframes moverTextoHorizontal {
+    0% { transform: translateX(0); }
+    /* Se mueve exactamente la mitad (un bloque entero) para repetir el ciclo perfecto */
+    100% { transform: translateX(-50%); } 
 }
 
-/* Fondo para Servicios */
-body.fondo-servicio {
-    background-image: url('Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png');
-}
 
-/* Fondo para Nosotros */
-body.fondo-nosotros {
-    background-image: url('Imagenes_De_Fondo/masaje\ de\ loto.png'); /* o 'masaje de loto.png' */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+/* ==========================================================================
+   12. TARJETAS DE INFORMACIÓN ADICIONAL (DISEÑO FINO)
+   ========================================================================== */
 
-/* Fondo para Contacto (Tu imagen del masaje) */
-body.fondo-contacto {
-    background-image: url('Imagenes_De_Fondo/serivico\ de\ tranquilidad.png');
-}
-
-/* --------------------------------------------------
-   AJUSTE DE TARJETAS Y CONTENEDOR PARA FACILITAR LA LECTURA
-   -------------------------------------------------- */
-
-/* Fondo semi-transparente para que el texto sobre la foto sea legible */
-.contenedor-principal, 
-.contenedor-contacto,
-.tarjeta-info, 
-.tarjeta-formulario,
-.tarjeta-lateral {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-/* Eliminar los fondos sólidos de las secciones para dar paso a contenedores semitransparentes */
-
-.portadaNosotros,
-.historiaNosotros,
-.misionVision,
-.valoresNosotros {
-    background-color: transparent; /* Quita el color sólido que tapa la foto */
-    padding: 30px 20px;
-}
-
-/*  tarjetas translúcidas para que el contenido sea legible sobre el fondo */
-.portadaNosotros,
-.historiaNosotros article,
-.misionVision article,
-.valoresNosotros article {
-    background-color: rgba(255, 255, 255, 0.88); /* Fondo blanco con 88% de opacidad */
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(4px); /* EFECTO CRISTAL: Suaviza la foto detrás del texto */
-}
-
-/* Distribución y márgenes del contenedor principal de Nosotros */
-.contenedor-nosotros {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+.info-adicional-contacto {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Ajuste de flexbox para la historia y misión/visión */
-.historiaNosotros, .misionVision {
-    display: flex;
-    gap: 30px;
+    gap: 25px;
     justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap; 
 }
 
-.historiaNosotros article, .misionVision article {
+.tarjeta-extra {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco más puro y sólido */
+    padding: 25px 30px;
+    border-radius: 12px;
     flex: 1;
-    padding: 30px;
+    min-width: 250px;
+    max-width: 400px; 
+    /* Sombra más amplia y difuminada, estilo tarjeta premium */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+    /* Borde superior morado oscuro para darle el toque fino (sin rosados) */
+    border-top: 5px solid #4a154b; 
 }
 
-.valoresNosotros {
+.tarjeta-extra h3 {
+    color: #4a154b;
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Línea separadora gris neutro en lugar de rosado */
+    border-bottom: 1px solid #d1d1d1; 
+    padding-bottom: 8px;
+}
+
+.tarjeta-extra ul, 
+.tarjeta-extra p, 
+.tarjeta-extra details {
+    padding-left: 10px;
+    margin: 0;
+    color: #444; /* Gris oscuro para lectura cómoda */
+    line-height: 1.6;
+}
+
+.tarjeta-extra details summary {
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
+/* ==========================================================================
+   13. BANNER PROMOCIONAL INICIO (GRANDE Y EN MOVIMIENTO)
+   ========================================================================== */
+
+.banner-promocional-inicio {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1000px; /* Un poco más ancho para que luzca imponente */
     text-align: center;
 }
 
-.contenedor-tarjetas-valores {
+/* El Carrusel Gigante */
+.carrusel-horizontal-inicio {
+    background-color: #8a2be2; /* Púrpura vibrante que llama a la acción */
+    color: white;
+    padding: 18px 0;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0; /* Solo redondea las esquinas de arriba */
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+    white-space: nowrap;
 }
 
-.valoresNosotros article {
-    flex: 1;
-    padding: 20px;
+.pista-texto-inicio {
+    display: flex;
+    /* 35 segundos para que pase a una velocidad legible al ser texto grande */
+    animation: moverTextoInicio 35s linear infinite; 
+}
+
+.pista-texto-inicio p {
+    margin: 0;
+    font-size: 1.4em; /* Texto mucho más grande */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes moverTextoInicio {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+
+/* ==========================================================================
+   14. CRONÓMETRO DESTACADO (EFECTO NEÓN)
+   ========================================================================== */
+
+.contenedor-cronometro {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 20px;
+    border-radius: 0 0 15px 15px; /* Redondea las esquinas de abajo */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 2px solid #8a2be2;
+    border-top: none; /* Se fusiona visualmente con el carrusel de arriba */
+}
+
+.contenedor-cronometro h3 {
+    color: #4a154b;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.etiqueta-reloj {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Diseño del reloj digital */
+.reloj-gigante {
+    display: inline-block;
+    font-size: 3.5em; /* ¡Números masivos! */
+    font-weight: bold;
+    font-family: monospace; /* Tipografía de reloj digital */
+    color: #ffffff;
+    background: linear-gradient(135deg, #7b1fa2, #4a154b); /* Degradado fino */
+    padding: 15px 40px;
+    border-radius: 12px;
+    /* Efecto de resplandor que palpita */
+    animation: latidoReloj 2s infinite alternate;
+}
+
+@keyframes latidoReloj {
+    from { 
+        box-shadow: 0 0 10px rgba(123, 31, 162, 0.4); 
+        transform: scale(1); 
+    }
+    to { 
+        box-shadow: 0 0 30px rgba(123, 31, 162, 0.8); 
+        transform: scale(1.03); /* Crece un poquitico para generar urgencia */
+    }
 }

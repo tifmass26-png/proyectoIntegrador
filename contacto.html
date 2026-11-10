@@ -12,47 +12,53 @@
     <header class="menuApp">
       <h1>OasisSpa</h1>
       <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="servicio.html">Servicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
+        <ul class="menu-principal">
+          <li><a href="index.html">Inicio</a></li>
+          
+          <li class="item-desplegable">
+            <a href="servicio.html">Servicio</a>
+            <ul class="submenu">
+              <li><a href="proyectoIntegrador/aromaterapia.html">Aromaterapia</a></li>
+              <li><a href="proyectoIntegrador/limpieza_Facial.html">Limpieza Facial</a></li>
+              <li><a href="proyectoIntegrador/exfoliacion_Corporal.html">Exfoliación Corporal</a></li>
+              <li><a href="proyectoIntegrador/masajeRelajante.html">Masaje Relajante</a></li>
+              <li><a href="proyectoIntegrador/hidromasaje.html">Hidromasaje</a></li>
+              <li><a href="proyectoIntegrador/piedrascalientes.html">Piedras Calientes</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
       </nav>
       <img class="logo" src="imagines/spaversion2.png" alt="Logo OasisSpa" />
     </header>
 
-    <section class="banner-hero hero-contacto">
-      <div class="banner-overlay">
-        <h2>Ponte en Contacto</h2>
-        <p>Estamos listos para agendar tu espacio de bienestar</p>
-      </div>
-    </section>
     <!-- Contenido principal -->
     <main class="contenedor-contacto">
       <section class="bienvenida">
         <h2>Contáctanos</h2>
         <p>Tu bienestar comienza aquí.</p>
       </section>
+      <section class="carrusel-horizontal-contenedor">
+        <article class="pista-horizontal-texto">
+          <!-- Primer bloque de texto -->
+          <p>✨ 30% de descuento en tu primera reserva &nbsp;&nbsp;|&nbsp;&nbsp; 💳 10% de descuento por pago anticipado &nbsp;&nbsp;|&nbsp;&nbsp; 📅 5% de descuento en cancelación anticipada &nbsp;&nbsp;|&nbsp;&nbsp; </p>
+          <!--  giro  infinito sin saltos -->
+          <p>✨ 30% de descuento en tu primera reserva &nbsp;&nbsp;|&nbsp;&nbsp; 💳 10% de descuento por pago anticipado &nbsp;&nbsp;|&nbsp;&nbsp; 📅 5% de descuento en cancelación anticipada &nbsp;&nbsp;|&nbsp;&nbsp; </p>
+        </article>
+      </section>
 
-      <!-- Bloque principal de contacto dividido en dos artículos semánticos -->
+      <!-- 2. Bloque principal de contacto (Información y Formulario) -->
       <section class="seccion-secciones">
-        <!-- Información de contacto utilizando la etiqueta semántica address -->
+        
         <article class="tarjeta-info">
           <h3>Información de Contacto</h3>
-
           <address class="datos-contacto">
-            <p class="dato-item">
-              <strong>📍 Dirección:</strong> Calle Principal #123, Medellín,
-              Colombia
-            </p>
-            <p class="dato-item">
-              <strong>📞 Teléfono:</strong> +57 300 111 2233
-            </p>
-            <p class="dato-item">
-              <strong>✉️ Correo:</strong> contacto@oasisspa.com
-            </p>
-            <p class="dato-item">
-              <strong>🕒 Horario:</strong> Lunes a Sábado: 8:00 AM - 7:00 PM
-            </p>
+            <p class="dato-item"><strong>📍 Dirección:</strong> Calle Principal #123, Medellín, Colombia</p>
+            <p class="dato-item"><strong>📞 Teléfono:</strong> +57 300 111 2233</p>
+            <p class="dato-item"><strong>✉️ Correo:</strong> contacto@oasisspa.com</p>
+            <p class="dato-item"><strong>🕒 Horario:</strong> Lunes a Sábado: 8:00 AM - 7:00 PM</p>
           </address>
 
           <!-- Mapa interactivo -->
@@ -72,98 +78,61 @@
         <!-- Formulario de mensaje -->
         <article class="tarjeta-formulario">
           <h3>Envíanos un mensaje</h3>
-
           <form action="#" method="POST" class="formulario">
             <p class="campo">
               <label for="nombre">Nombre completo</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Ej. Ana María"
-                required
-              />
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana María" required />
             </p>
-
             <p class="campo">
               <label for="correo">Correo electrónico</label>
-              <input
-                type="email"
-                id="correo"
-                name="correo"
-                placeholder="ejemplo@correo.com"
-                required
-              />
+              <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required />
             </p>
-
             <p class="campo">
               <label for="asunto">Asunto</label>
-              <input
-                type="text"
-                id="asunto"
-                name="asunto"
-                placeholder="Reserva / Consulta"
-              />
+              <input type="text" id="asunto" name="asunto" placeholder="Reserva / Consulta" />
             </p>
-
             <p class="campo">
               <label for="mensaje">Mensaje</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows="4"
-                placeholder="Escribe tu mensaje..."
-                required
-              ></textarea>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
             </p>
-
             <button type="submit" class="btn-enviar">Enviar Mensaje</button>
           </form>
         </article>
       </section>
+
+      <!-- 3. NUEVO: Tarjetas organizadas (Dudas y Experiencia) que reemplazan las franjas largas -->
+      <section class="info-adicional-contacto">
+        
+        <article class="tarjeta-extra">
+          <h3>¿Dudas Rápidas?</h3>
+          <!--  detalles interactivos -->
+          <details>
+            <summary><strong>¿Requiere reserva?</strong></summary>
+            <p>Sí, recomendamos agendar con 24h de anticipación.</p>
+          </details>
+          <details>
+            <summary><strong>¿Métodos de pago?</strong></summary>
+            <p>Efectivo, transferencias y tarjetas de crédito/débito.</p>
+          </details>
+        </article>
+        
+        <article class="tarjeta-extra">
+          <h3>Tu Experiencia</h3>
+          <p class="resaltado">🌿 Ambiente 100% relajante</p>
+          <p class="resaltado">🍵 Bebida de bienvenida incluida</p>
+          <p class="resaltado">💆‍♀️ Terapeutas certificadas</p>
+        </article>
+
+      </section>
     </main>
 
+    <!-- Botón Flotante de WhatsApp -->
     <aside class="posicion-whatsapp">
-      <a
-        href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="imagines/imagen_whast.png"
-          alt="Contacto vía WhatsApp"
-          class="whatsapp-imagen"
-        />
+      <a href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion" target="_blank" rel="noopener noreferrer">
+        <img src="imagines/imagen_whast.png" alt="Contacto vía WhatsApp" class="whatsapp-imagen" />
       </a>
     </aside>
 
-    <section class="distribucion-contacto">
-      <!-- Columna Izquierda: Preguntas Frecuentes Cortas -->
-      <article class="tarjeta-lateral">
-        <h3>¿Dudas Rápidas?</h3>
-        <details>
-          <summary><strong>¿Requiere reserva?</strong></summary>
-          <p>Sí, recomendamos agendar con 24h de anticipación.</p>
-        </details>
-        <details>
-          <summary><strong>¿Metodos de pago?</strong></summary>
-          <p>Efectivo, transferencias y tarjetas de crédito/débito.</p>
-        </details>
-      </article>
-
-      <!-- Columna Centro: Información + Formulario -->
-      <section class="seccion-secciones">
-        <!-- Aquí va el bloque de Información  -->
-      </section>
-
-      <!-- Columna Derecha: Beneficios / Experiencia Oasis -->
-      <article class="tarjeta-lateral">
-        <h3>Tu Experiencia</h3>
-        <p class="resaltado">🌿 Ambiente 100% relajante</p>
-        <p class="resaltado">🍵 Bebida de bienvenida incluida</p>
-        <p class="resaltado">💆‍♀️ Terapeutas certificadas</p>
-      </article>
-    </section>
     <footer>
       <p><strong>OasisSpa</strong></p>
       <p>Dirección: Calle 25#17a8</p>
@@ -171,6 +140,7 @@
       <p>Correo: contacto@oasisspa.com</p>
       <p>© 2026 OasisSpa - Todos los derechos reservados.</p>
     </footer>
+    
     <script src="contacto.js"></script>
   </body>
 </html>
