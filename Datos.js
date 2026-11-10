@@ -23,4 +23,6 @@ class GestorAlmacenamiento {
     static limpiarHistorial() {
         localStorage.removeItem(this.Clave_Reservas);
     }
+
 }
+export default GestorAlmacenamiento;
