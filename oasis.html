@@ -7,189 +7,251 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="mifondo body-foto fondo-inicio">
+    <!-- 1. HEADER Y MENÚ CORREGIDO (Semántico y anidado) -->
     <header class="menuApp">
       <h1>OasisSpa</h1>
       <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="servicio.html">Servicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
+        <ul class="menu-principal">
+          <li><a href="index.html">Inicio</a></li>
+
+          <!-- Ítem con Submenú desplegable -->
+          <li class="item-desplegable">
+            <a href="servicio.html">Servicio</a>
+            <ul class="submenu">
+              <li>
+                <a href="aromaterapia.html">Aromaterapia</a>
+              </li>
+              <li>
+                <a href="limpieza_Facial.html"
+                  >Limpieza Facial</a
+                >
+              </li>
+              <li>
+                <a href="exfoliacion_Corporal.html"
+                  >Exfoliación Corporal</a
+                >
+              </li>
+              <li>
+                <a href="masajeRelajante.html"
+                  >Masaje Relajante</a
+                >
+              </li>
+              <li>
+                <a href="hidromasaje.html">Hidromasaje</a>
+              </li>
+              <li>
+                <a href="piedrascalientes.html"
+                  >Piedras Calientes</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
       </nav>
-      <img class="logo" src="imagines/spaversion2.png" alt="Logo OasisSpa" />
+ <img class="logo" src="imagines/spaversion2.png" alt="Logo OasisSpa">
+
     </header>
 
-    <section class="banner-hero hero-inicio">
-      <div class="banner-overlay">
-        <h2>Ponte en Contacto</h2>
-        <p>Estamos listos para agendar tu espacio de bienestar</p>
-      </div>
-    </section>
+    <main>
+      <section class="descripcion">
+        <p class="descripcion-p">
+          Nuestra empresa está orientada para las personas que quieren tener un
+          momento de tranquilidad y salir de su zona de confort dándoles un plus
+          de relajación y desconectarse del mundo. Adicionalmente ofrecemos
+          diferentes planes (familiar, parejas, amigos, etc.).
+        </p>
+      </section>
 
-    <section class="descripcion">
-      <p class="descripcion-p">
-        Nuestra empresa está orientada para las personas que quieren tener un
-        momento de tranquilidad y salir de su zona de confort dándoles un plus
-        de relajación y desconectarse del mundo. Adicionalmente ofrecemos
-        diferentes planes (familiar, parejas, amigos, etc.).
-      </p>
-    </section>
+    <!-- BANNER PROMOCIONAL INICIO (FONDO SUAVE Y CRONÓMETRO ELEGANTE) -->
+      <section class="banner-promocional-inicio">
+        
+        <!-- Carrusel de texto con fondo lila suave -->
+        <article class="carrusel-horizontal-inicio">
+          <div class="pista-texto-inicio">
+            <p>✨ 30% DE DESCUENTO en primera reserva &nbsp;&nbsp;|&nbsp;&nbsp; 💳 10% OFF por pago anticipado &nbsp;&nbsp;|&nbsp;&nbsp; 🎁 5% ADICIONAL al agendar más de 3 servicios &nbsp;&nbsp;|&nbsp;&nbsp;</p>
+            <p>✨ 30% DE DESCUENTO en primera reserva &nbsp;&nbsp;|&nbsp;&nbsp; 💳 10% OFF por pago anticipado &nbsp;&nbsp;|&nbsp;&nbsp; 🎁 5% ADICIONAL al agendar más de 3 servicios &nbsp;&nbsp;|&nbsp;&nbsp;</p>
+          </div>
+        </article>
 
-    <section class="servicios">
-      <div class="card">
-        <img src="imagines/aroma terapia.1.jpg" alt="Aromaterapia" />
-        <h3>Aromaterapia</h3>
-      </div>
+        <!-- Cronómetro central -->
+        <article class="contenedor-cronometro">
+          <h3>¡Ofertas por tiempo limitado!</h3>
+          <p class="etiqueta-reloj">Las promociones terminan en:</p>
+          
+          <div class="marco-reloj">
+            <span class="cronometro" data-segundos="86400">24:00:00</span>
+          </div>
+        </article>
 
-      <div class="card">
-        <img src="imagines/limpieza facial.1.jpg" alt="Limpieza Facial" />
-        <h3>Limpieza Facial</h3>
-      </div>
+      </section>
 
-      <div class="card">
-        <img src="imagines/exfoliaciòn corporal.1.jpg" alt="Exfoliación Corporal" />
-        <h3>Exfoliación Corporal</h3>
-      </div>
+      <!-- 3. FORMULARIO REESTRUCTURADO DE RESERVA Y PAGO -->
+      <section class="formulario" id="reservas">
+        <h2>Reserva tu experiencia</h2>
 
-      <div class="card">
-        <img src="imagines/masaje relajante.1.png" alt="Masaje Relajante" />
-        <h3>Masaje Relajante</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/hidromasaje.1.webp" alt="Hidromasaje" />
-        <h3>Hidromasaje</h3>
-      </div>
-
-      <div class="card">
-        <img src="imagines/masaje relajante.1.png" alt="Piedras Calientes" />
-        <h3>Piedras Calientes</h3>
-      </div>
-    </section>
-
-    <!-- FORMULARIO REESTRUCTURADO DE RESERVA Y PAGO -->
-    <section class="formulario">
-      <h2>Reserva tu experiencia</h2>
-
-      <form id="form-checkout">
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4a154b; font-size: 1rem;">
-          1. Agendar Servicios
-        </h3>
-
-        <label for="select-servicio" class="datos">Selecciona un servicio:</label>
-        <select
-          id="select-servicio"
-          style="
-            width: 100%;
-            padding: 6px;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-          "
-        >
-          <option value="Aromaterapia|50000">Aromaterapia - $50.000</option>
-          <option value="Limpieza Facial|70000">Limpieza Facial - $70.000</option>
-          <option value="Exfoliación Corporal|60000">Exfoliación Corporal - $60.000</option>
-          <option value="Masaje Relajante|80000">Masaje Relajante - $80.000</option>
-          <option value="Hidromasaje|90000">Hidromasaje - $90.000</option>
-          <option value="Piedras Calientes|85000">Piedras Calientes - $85.000</option>
-        </select>
-
-        <button
-          type="button"
-          id="btn-agregar-servicio"
-          class="boton1"
-          style="width: 100%; margin-bottom: 10px"
-        >
-          ➕ Añadir al Carrito
-        </button>
-
-        <div style="border-top: 1px dashed #ccc; padding-top: 8px; margin-bottom: 15px;">
-          <h4 style="margin: 0; font-size: 0.9rem">Tu Carrito:</h4>
-          <ul
-            id="lista-carrito"
+        <form id="form-checkout">
+          <h3
             style="
-              list-style: none;
-              padding: 0;
-              margin: 8px 0;
-              font-size: 0.85rem;
-            "
-          ></ul>
-          <p
-            style="
-              font-weight: bold;
-              font-size: 0.9rem;
-              text-align: right;
-              margin: 0;
+              text-align: center;
+              margin-bottom: 10px;
+              color: #4a154b;
+              font-size: 1rem;
             "
           >
-            Total: <span id="total-pagar" style="color: #6b46c1">$0</span>
-          </p>
-        </div>
+            1. Agendar Servicios
+          </h3>
 
-        <h3 style="text-align: center; margin-bottom: 10px; color: #4a154b; font-size: 1rem;">
-          2. Datos de Contacto y Pago
-        </h3>
+          <label for="select-servicio" class="datos"
+            >Selecciona un servicio:</label
+          >
+          <select
+            id="select-servicio"
+            style="
+              width: 100%;
+              padding: 6px;
+              margin-bottom: 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="Aromaterapia|50000">Aromaterapia - $50.000</option>
+            <option value="Limpieza Facial|70000">
+              Limpieza Facial - $70.000
+            </option>
+            <option value="Exfoliación Corporal|60000">
+              Exfoliación Corporal - $60.000
+            </option>
+            <option value="Masaje Relajante|80000">
+              Masaje Relajante - $80.000
+            </option>
+            <option value="Hidromasaje|90000">Hidromasaje - $90.000</option>
+            <option value="Piedras Calientes|85000">
+              Piedras Calientes - $85.000
+            </option>
+          </select>
 
-        <label for="cliente-nombre" class="datos">Nombre completo:</label>
-        <input
-          type="text"
-          id="cliente-nombre"
-          required
-          placeholder="Ej. Ana María Pérez"
-        /><br />
+          <button
+            type="button"
+            id="btn-agregar-servicio"
+            class="boton1"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            ➕ Añadir al Carrito
+          </button>
 
-        <label for="cliente-telefono" class="datos">Teléfono / WhatsApp:</label>
-        <input
-          type="tel"
-          id="cliente-telefono"
-          required
-          placeholder="Ej. 3001234567"
-        /><br />
+          <div
+            style="
+              border-top: 1px dashed #ccc;
+              padding-top: 8px;
+              margin-bottom: 15px;
+            "
+          >
+            <h4 style="margin: 0; font-size: 0.9rem">Tu Carrito:</h4>
+            <ul
+              id="lista-carrito"
+              style="
+                list-style: none;
+                padding: 0;
+                margin: 8px 0;
+                font-size: 0.85rem;
+              "
+            ></ul>
+            <p
+              style="
+                font-weight: bold;
+                font-size: 0.9rem;
+                text-align: right;
+                margin: 0;
+              "
+            >
+              Total: <span id="total-pagar" style="color: #6b46c1">$0</span>
+            </p>
+          </div>
 
-        <label for="metodo-pago" class="datos">Método de Pago:</label>
-        <select
-          id="metodo-pago"
-          required
-          style="
-            width: 100%;
-            padding: 6px;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-          "
-        >
-          <option value="">-- Seleccionar --</option>
-          <option value="PSE">PSE (Débito Bancario)</option>
-          <option value="Bancolombia">Transferencia Bancolombia / Nequi</option>
-          <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-        </select><br />
+          <h3
+            style="
+              text-align: center;
+              margin-bottom: 10px;
+              color: #4a154b;
+              font-size: 1rem;
+            "
+          >
+            2. Datos de Contacto y Pago
+          </h3>
 
-        <label for="observaciones" class="datos">Observaciones (Opcional):</label>
-        <textarea
-          id="observaciones"
-          rows="2"
-          placeholder="Ej. Alergia a aceites..."
-          style="
-            width: 100%;
-            padding: 6px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-          "
-        ></textarea>
+          <label for="cliente-nombre" class="datos">Nombre completo:</label>
+          <input
+            type="text"
+            id="cliente-nombre"
+            required
+            placeholder="Ej. Ana María Pérez"
+          /><br />
 
-        <br /><br />
+          <label for="cliente-telefono" class="datos"
+            >Teléfono / WhatsApp:</label
+          >
+          <input
+            type="tel"
+            id="cliente-telefono"
+            required
+            placeholder="Ej. 3001234567"
+          /><br />
 
-        <button
-          class="boton1"
-          type="submit"
-          style="width: 100%; font-weight: bold"
-        >
-          💳 Pagar y Confirmar Reserva
-        </button>
-      </form>
-    </section>
+          <label for="metodo-pago" class="datos">Método de Pago:</label>
+          <select
+            id="metodo-pago"
+            required
+            style="
+              width: 100%;
+              padding: 6px;
+              margin-bottom: 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="">-- Seleccionar --</option>
+            <option value="PSE">PSE (Débito Bancario)</option>
+            <option value="Bancolombia">
+              Transferencia Bancolombia / Nequi
+            </option>
+            <option value="Tarjeta de Crédito">
+              Tarjeta de Crédito
+            </option></select
+          ><br />
 
+          <label for="observaciones" class="datos"
+            >Observaciones (Opcional):</label
+          >
+          <textarea
+            id="observaciones"
+            rows="2"
+            placeholder="Ej. Alergia a aceites..."
+            style="
+              width: 100%;
+              padding: 6px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+            "
+          ></textarea>
+
+          <br /><br />
+
+          <button
+            class="boton1"
+            type="submit"
+            style="width: 100%; font-weight: bold"
+          >
+            💳 Pagar y Confirmar Reserva
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- ZONA WHATSAPP INTACTA -->
     <aside class="posicion-whatsapp">
       <a
         href="https://wa.me/573001112233?text=Hola,%20quisiera%20mas%20informacion"
@@ -204,7 +266,37 @@
       </a>
     </aside>
 
+
    <script type="module" src="java.js"></script>
+
+   <!-- cronómetro del banner con REINICIO AUTOMÁTICO FLOTEER -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const etiquetaCronometro = document.querySelector(".cronometro");
+        if(etiquetaCronometro) {
+          let tiempoRestante = parseInt(etiquetaCronometro.getAttribute("data-segundos"));
+
+          const actualizarReloj = setInterval(() => {
+            
+            // --- INICIO DEL CÓDIGO NUEVO DE REINICIO AUTOMÁTICO ---
+            if (tiempoRestante <= 0) {
+              // Vuelve a leer los segundos iniciales y resetea la variable sin detener el reloj
+              tiempoRestante = parseInt(etiquetaCronometro.getAttribute("data-segundos"));
+            }
+            // --- FIN DEL CÓDIGO NUEVO ---
+
+            tiempoRestante--; 
+            const horas = Math.floor(tiempoRestante / 3600);
+            const minutos = Math.floor((tiempoRestante % 3600) / 60);
+            const segundos = tiempoRestante % 60;
+            const formatoHoras = String(horas).padStart(2, '0');
+            const formatoMinutos = String(minutos).padStart(2, '0');
+            const formatoSegundos = String(segundos).padStart(2, '0');
+            etiquetaCronometro.textContent = `${formatoHoras}:${formatoMinutos}:${formatoSegundos}`;
+          }, 1000);
+        }
+      });
+    </script>
 
     <footer>
       <p><strong>OasisSpa</strong></p>

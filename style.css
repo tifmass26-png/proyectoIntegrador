@@ -19,7 +19,7 @@ body {
 }
 body.fondo-inicio { background-image: url('Imagenes_De_Fondo/decoracion\ de\ relax.png'); }
 body.fondo-servicio { background-image: url('Imagenes_De_Fondo/masaje\ con\ piedras\ calientes.png'); }
-body.fondo-nosotros { background-image: url('Imagenes_De_Fondo/masaje\ de\ loto.png'); }
+body.fondo-nosotros { background-image: url('Imagenes_De_Fondo/fondonosotros.jpg'); }
 body.fondo-contacto { background-image: url('Imagenes_De_Fondo/serivico\ de\ tranquilidad.png'); }
 
 /* Contenedor central (Uso general) */
@@ -687,4 +687,132 @@ footer p {
 @keyframes latidoReloj {
     from { transform: scale(1); }
     to { transform: scale(1.02); }
+}
+
+
+/* ==========================================
+   15. SUBPÁGINAS DE SERVICIOS
+   ========================================== */
+
+.detalle-servicio {
+    max-width: 1150px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.tarjeta-servicio {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    background-color: rgba(255, 255, 255, 0.92);
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN */
+
+.imagen-servicio {
+    flex: 1;
+}
+
+.imagen-servicio img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+/* INFORMACIÓN */
+
+.informacion-servicio {
+    flex: 1;
+    color: #444;
+}
+
+.informacion-servicio h2 {
+    color: #4a154b;
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.descripcion-servicio {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.datos-servicio {
+    background-color: #f1e4f3;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin: 20px 0;
+}
+
+.datos-servicio p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.informacion-servicio h3 {
+    color: #7020a0;
+    margin-top: 20px;
+}
+
+.lista-beneficios {
+    line-height: 2;
+}
+
+/* BOTÓN RESERVAR */
+
+.boton-reservar {
+    display: inline-block;
+
+    background-color: #8a2be2;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.boton-reservar:hover {
+    background-color: #4a154b;
+    transform: scale(1.05);
+}
+
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 768px) {
+
+    .tarjeta-servicio {
+        flex-direction: column;
+    }
+
+    .imagen-servicio img {
+        height: 280px;
+    }
+
+    .informacion-servicio {
+        width: 100%;
+    }
+
 }

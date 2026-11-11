@@ -188,3 +188,48 @@ class AppSpa {
 document.addEventListener('DOMContentLoaded', () => {
   new AppSpa();
 });
+
+
+
+// ========================================
+// SELECCIONAR SERVICIO DESDE OTRA PAGINA
+// ========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Leer los parámetros de la URL
+    const parametros = new URLSearchParams(window.location.search);
+
+    // 2. Obtener el servicio enviado desde la subpágina
+    const servicioSeleccionado = parametros.get("servicio");
+
+    // 3. Buscar el selector de servicios
+    const selectorServicio = document.getElementById("select-servicio");
+
+    // 4. Verificar que existan los datos necesarios
+    if (servicioSeleccionado && selectorServicio) {
+
+        // 5. Buscar el servicio por el nombre que contiene value
+        const opcion = Array.from(selectorServicio.options).find(opcion => {
+
+            const nombreServicio = opcion.value.split("|")[0].trim();
+
+            return nombreServicio.toLowerCase() ===
+                   servicioSeleccionado.trim().toLowerCase();
+        });
+
+        // 6. Seleccionar el servicio encontrado
+        if (opcion) {
+
+            selectorServicio.value = opcion.value;
+
+            console.log("Servicio seleccionado:", opcion.value);
+
+        } else {
+
+            console.log("No se encontró el servicio:", servicioSeleccionado);
+
+        }
+    }
+
+});
