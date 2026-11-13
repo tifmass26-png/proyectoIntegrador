@@ -13,7 +13,8 @@ import GestorAlmacenamiento from "./Datos.js";
 
 class AppSpa {
   constructor() {
-    this.carritoServicios = [];
+    this.CLAVE_CARRITO = 'oasis_spa_carrito';
+    this.carritoServicios = this.cargarCarrito();
     this.MAX_SERVICIOS = 4;
 
     // Referencias a los IDs del DOM HTML
@@ -22,8 +23,46 @@ class AppSpa {
     this.listaCarrito = document.getElementById('lista-carrito');
     this.totalPagar = document.getElementById('total-pagar');
     this.formCheckout = document.getElementById('form-checkout');
+    this.botonAbrirCarrito = document.getElementById('boton-abrir-carrito');
+    this.botonCerrarCarrito = document.getElementById('boton-cerrar-carrito');
+    this.panelCarrito = document.getElementById('reservas');
+    this.fondoCarrito = document.getElementById('fondo-carrito');
 
     this.inicializarEventos();
+    this.actualizarVistaCarrito();
+    this.procesarServicioSolicitado();
+  }
+
+  cargarCarrito() {
+    const carritoGuardado = localStorage.getItem(this.CLAVE_CARRITO);
+    if (!carritoGuardado) return [];
+
+    const serviciosGuardados = JSON.parse(carritoGuardado);
+    if (!Array.isArray(serviciosGuardados)) {
+      throw new Error('El carrito guardado no tiene un formato válido.');
+    }
+
+    return serviciosGuardados.map((servicio, index) => {
+      if (
+        !servicio ||
+        typeof servicio.description !== 'string' ||
+        !Number.isFinite(servicio.precioAux) ||
+        !Number.isFinite(servicio.duration)
+      ) {
+        throw new Error('Uno de los servicios guardados no es válido.');
+      }
+
+      const servicioCargado = new Service(
+        Date.now() + index,
+        servicio.description,
+        `Servicio de relajación: ${servicio.description}`,
+        "imagines/spaversion2.png",
+        servicio.duration,
+        "Disponible"
+      );
+      servicioCargado.precioAux = servicio.precioAux;
+      return servicioCargado;
+    });
   }
 
   inicializarEventos() {
@@ -34,17 +73,92 @@ class AppSpa {
     if (this.formCheckout) {
       this.formCheckout.addEventListener('submit', (e) => this.procesarReserva(e));
     }
+
+    if (this.botonAbrirCarrito) {
+      this.botonAbrirCarrito.addEventListener('click', () => this.abrirCarrito());
+    }
+
+    if (this.botonCerrarCarrito) {
+      this.botonCerrarCarrito.addEventListener('click', () => this.cerrarCarrito());
+    }
+
+    if (this.fondoCarrito) {
+      this.fondoCarrito.addEventListener('click', () => this.cerrarCarrito());
+    }
+
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape' && this.panelCarrito?.classList.contains('abierto')) {
+        this.cerrarCarrito();
+      }
+    });
+  }
+
+  abrirCarrito() {
+    if (!this.panelCarrito || !this.fondoCarrito) return;
+
+    this.fondoCarrito.hidden = false;
+    this.fondoCarrito.classList.add('abierto');
+    this.panelCarrito.classList.add('abierto');
+    this.panelCarrito.setAttribute('aria-hidden', 'false');
+    this.botonAbrirCarrito?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('carrito-abierto');
+    this.botonCerrarCarrito?.focus();
+  }
+
+  cerrarCarrito() {
+    if (!this.panelCarrito || !this.fondoCarrito) return;
+
+    this.fondoCarrito.classList.remove('abierto');
+    this.panelCarrito.classList.remove('abierto');
+    this.panelCarrito.setAttribute('aria-hidden', 'true');
+    this.botonAbrirCarrito?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('carrito-abierto');
+    window.setTimeout(() => {
+      if (!this.panelCarrito.classList.contains('abierto')) {
+        this.fondoCarrito.hidden = true;
+      }
+    }, 300);
+    this.botonAbrirCarrito?.focus();
+  }
+
+  procesarServicioSolicitado() {
+    const parametros = new URLSearchParams(window.location.search);
+    const servicioSolicitado = parametros.get('servicio');
+    if (!servicioSolicitado || !this.selectServicio) return;
+
+    const opcion = Array.from(this.selectServicio.options).find((elemento) => {
+      const nombreServicio = elemento.value.split('|')[0].trim();
+      return nombreServicio.toLowerCase() === servicioSolicitado.trim().toLowerCase();
+    });
+
+    if (!opcion) {
+      alert(`No se encontró el servicio: ${servicioSolicitado}`);
+      return;
+    }
+
+    this.selectServicio.value = opcion.value;
+    if (this.agregarServicio()) {
+      const busqueda = new URLSearchParams(window.location.search);
+      busqueda.delete('servicio');
+      const queryActualizada = busqueda.toString();
+      window.history.replaceState(
+        null,
+        '',
+        `${window.location.pathname}${queryActualizada ? `?${queryActualizada}` : ''}${window.location.hash}`
+      );
+      this.abrirCarrito();
+    }
   }
 
   agregarServicio() {
     if (this.carritoServicios.length >= this.MAX_SERVICIOS) {
       alert(`Límite alcanzado: Máximo ${this.MAX_SERVICIOS} servicios por reserva.`);
-      return;
+      return false;
     }
 
     if (!this.selectServicio || !this.selectServicio.value) {
       alert('Por favor, selecciona un servicio del menú.');
-      return;
+      return false;
     }
 
     const valorSelect = this.selectServicio.value;
@@ -65,12 +179,24 @@ class AppSpa {
     nuevoServicio.precioAux = precio;
 
     this.carritoServicios.push(nuevoServicio);
+    this.guardarCarrito();
     this.actualizarVistaCarrito();
+    return true;
   }
 
   eliminarServicio(indice) {
-    this.carritoServicios.splice(indice, 1);
+    this.carritoServicios.splice(Number(indice), 1);
+    this.guardarCarrito();
     this.actualizarVistaCarrito();
+  }
+
+  guardarCarrito() {
+    const serviciosParaGuardar = this.carritoServicios.map((servicio) => ({
+      description: servicio.description,
+      precioAux: servicio.precioAux,
+      duration: servicio.duration
+    }));
+    localStorage.setItem(this.CLAVE_CARRITO, JSON.stringify(serviciosParaGuardar));
   }
 
   actualizarVistaCarrito() {
@@ -99,6 +225,11 @@ class AppSpa {
 
     if (this.totalPagar) {
       this.totalPagar.textContent = `$${totalAcumulado.toLocaleString('es-CO')}`;
+    }
+
+    const cantidadCarrito = document.getElementById('cantidad-carrito');
+    if (cantidadCarrito) {
+      cantidadCarrito.textContent = String(this.carritoServicios.length);
     }
 
     // Asignación de eventos a los botones de eliminar
@@ -180,6 +311,7 @@ class AppSpa {
     // Reiniciar formulario y vista
     this.formCheckout.reset();
     this.carritoServicios = [];
+    this.guardarCarrito();
     this.actualizarVistaCarrito();
   }
 }
@@ -187,49 +319,4 @@ class AppSpa {
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   new AppSpa();
-});
-
-
-
-// ========================================
-// SELECCIONAR SERVICIO DESDE OTRA PAGINA
-// ========================================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    // 1. Leer los parámetros de la URL
-    const parametros = new URLSearchParams(window.location.search);
-
-    // 2. Obtener el servicio enviado desde la subpágina
-    const servicioSeleccionado = parametros.get("servicio");
-
-    // 3. Buscar el selector de servicios
-    const selectorServicio = document.getElementById("select-servicio");
-
-    // 4. Verificar que existan los datos necesarios
-    if (servicioSeleccionado && selectorServicio) {
-
-        // 5. Buscar el servicio por el nombre que contiene value
-        const opcion = Array.from(selectorServicio.options).find(opcion => {
-
-            const nombreServicio = opcion.value.split("|")[0].trim();
-
-            return nombreServicio.toLowerCase() ===
-                   servicioSeleccionado.trim().toLowerCase();
-        });
-
-        // 6. Seleccionar el servicio encontrado
-        if (opcion) {
-
-            selectorServicio.value = opcion.value;
-
-            console.log("Servicio seleccionado:", opcion.value);
-
-        } else {
-
-            console.log("No se encontró el servicio:", servicioSeleccionado);
-
-        }
-    }
-
 });

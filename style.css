@@ -84,6 +84,92 @@ h1 {
     border-radius: 50%;
 }
 
+.boton-carrito {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #6b46c1;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-carrito:hover {
+    background-color: #4a2d91;
+    transform: translateY(-2px);
+}
+
+.icono-carrito {
+    width: 22px;
+    height: 22px;
+}
+
+.fondo-carrito {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fondo-carrito[hidden] {
+    display: none;
+}
+
+.fondo-carrito.abierto {
+    opacity: 1;
+}
+
+.formulario.panel-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1101;
+    width: min(440px, 100vw);
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 70px 25px 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+.formulario.panel-carrito.abierto {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.cerrar-carrito {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: #e8defa;
+    color: #4a154b;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+body.carrito-abierto {
+    overflow: hidden;
+}
+
 /* Menú Principal */
 .menu-principal {
     display: flex;
